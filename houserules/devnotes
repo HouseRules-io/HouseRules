@@ -6,12 +6,8 @@ CHECK 0.1 - index.html displays Hello World
 
 CHECK 0.1.5 - add one houses with rulebooks and rules
 
-0.2 - index.html displays all Houses, Rulebooks, and Rules
+CHECK 0.2 - index.html displays all Houses, Rulebooks, and Rules
 
 0.3 - index.html displays clickable Houses that lead to clickable Rulebooks that lead to Rules
 
-0.4 - index.html implements CSS
 
-0.5 - /house, /rulebook, and /rule implement CSS
-
-houserules.io/"house"+#/rulebook-name/rulebook-name/rule-name

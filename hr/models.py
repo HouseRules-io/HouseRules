@@ -9,11 +9,11 @@ class House(models.Model):
 		return self.house_name
 
 class Rulebook(models.Model):
-	name_text = models.CharField(max_length=50)
+	rulebook_name = models.CharField(max_length=50)
 	parent_house = models.ForeignKey(House, default = "0000000", on_delete=models.CASCADE)
 
 	def __str__(self):
-		return self.name_text
+		return self.rulebook_name
 
 class Rule(models.Model):
 	rule_name = models.CharField(max_length=50)
