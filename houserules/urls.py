@@ -19,10 +19,17 @@ from hr import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
+    path('', views.index, name = "index"),
     path('hw/', views.HelloWorld),
+
+    path('signup', views.signup),
+
+
     path('house/<int:House_id>/', views.house),
+    path('house/new', views.newHouse),
     path('rulebook/<int:Rulebook_id>/', views.rulebook),
+    path('rulebook/new/', views.newRulebook),
     path('rule/<int:Rule_id>/', views.rule),
+    path('rule/new/', views.newRule),
 
 ]

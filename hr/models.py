@@ -13,7 +13,7 @@ class Rulebook(models.Model):
 	parent_house = models.ForeignKey(House, default = "0000000", on_delete=models.CASCADE)
 
 	def __str__(self):
-		return self.rulebook_name
+		return self.parent_house.__str__() + "'s " + self.rulebook_name + " Rules"
 
 class Rule(models.Model):
 	rule_name = models.CharField(max_length=50)
@@ -21,4 +21,4 @@ class Rule(models.Model):
 	parent_rulebook = models.ForeignKey(Rulebook, default = "0000000", on_delete=models.CASCADE)
 
 	def __str__(self):
-		return self.rule_name
+		return self.rule_name + " for " + self.parent_rulebook.__str__()

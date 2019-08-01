@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth import login, authenticate
 from django.template import loader
 from django.http import HttpResponse
 
@@ -6,6 +7,11 @@ from django.http import HttpResponse
 from .models import House
 from .models import Rulebook
 from .models import Rule
+
+from .forms import SignUpForm
+from .forms import HouseForm
+from .forms import RulebookForm
+from .forms import RuleForm
 
 
 def HelloWorld(request):
@@ -39,11 +45,58 @@ def rulebook(request, Rulebook_id):
 	}
 	return HttpResponse(template.render(context, request))
 
+def newHouse(request):
+	if request.method == 'POST':
+		form = HouseForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect('index')
+	else:
+		form = HouseForm()
+	return render(request, 'hr/newHouse.html', {'form': form})
+
+def newRulebook(request):
+	if request.method == 'POST':
+		form = RulebookForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect('index')
+	else:
+		form = RulebookForm()
+	return render(request, 'hr/newRulebook.html', {'form': form})
+
+def newRule(request):
+	if request.method == 'POST':
+		form = RuleForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect('index')
+	else:
+		form = RuleForm()
+	return render(request, 'hr/newRule.html', {'form': form})
+
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('index')
+    else:
+        form = SignUpForm()
+    return render(request, 'hr/signup.html', {'form': form})
 
 
 
 
-def home(request):
+
+
+def index(request):
 	template = loader.get_template('hr/index.html')
 	house_list = House.objects.all()
 	rulebook_list = Rulebook.objects.all()
