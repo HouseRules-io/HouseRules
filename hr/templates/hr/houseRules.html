@@ -1,3 +1,14 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<head>
+	<link rel = "stylesheet" type = "text/css" href = "{% static 'hr/house/style.css' %}"/>
+		{% block css_js %}
+		{% endblock %}
+</head>
+
+
 <h1>{{ House }}</h1>
 
 <hr> 

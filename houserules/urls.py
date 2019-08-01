@@ -23,6 +23,7 @@ urlpatterns = [
     path('hw/', views.HelloWorld),
 
     path('signup', views.signup),
+    path('dev', views.dev),
 
 
     path('house/<int:House_id>/', views.house),

@@ -1,0 +1,48 @@
+<h1>This is the dev page.</h1>
+
+<hr>
+
+{% if house_list %}
+	<h1>Here are the houses we have on file.</h1>
+	<ul>
+    {% for house in house_list %}
+        <li><a href="/house/{{ house.id }}/">{{ house.house_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No houses are available.</p>
+{% endif %}
+
+<a href="/house/new"> Create House </a>
+
+<hr>
+
+{% if rulebook_list %}
+	<h1>Here are the rulebooks we have on file.</h1>
+	<ul>
+    {% for rulebook in rulebook_list %}
+        <li><a href="/rulebook/{{ rulebook.id }}/">{{ rulebook }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No rulebooks are available.</p>
+{% endif %}
+
+<a href="/rulebook/new"> Create Rulebook </a>
+
+<hr>
+
+{% if rule_list %}
+	<h1>Here are the rules we have on file.</h1>
+    <ul>
+    {% for rule in rule_list %}
+        <li><a href="/rule/{{ rule.id }}/">{{ rule }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No rules are available.</p>
+{% endif %}
+
+<a href="/rule/new"> Create Rule </a>
+
+<hr>

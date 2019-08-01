@@ -96,8 +96,8 @@ def signup(request):
 
 
 
-def index(request):
-	template = loader.get_template('hr/index.html')
+def dev(request):
+	template = loader.get_template('hr/dev.html')
 	house_list = House.objects.all()
 	rulebook_list = Rulebook.objects.all()
 	rule_list = Rule.objects.all()
@@ -106,5 +106,15 @@ def index(request):
 		'house_list' : house_list,
 		'rulebook_list' : rulebook_list,
 		'rule_list' : rule_list
+	}
+	return HttpResponse(template.render(context, request))
+
+
+def index(request):
+	template = loader.get_template('hr/index.html')
+	house_list = House.objects.all()
+
+	context = {
+		'house_list' : house_list,
 	}
 	return HttpResponse(template.render(context, request))

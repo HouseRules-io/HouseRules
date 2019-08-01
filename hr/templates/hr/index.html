@@ -13,30 +13,11 @@
     <p>No houses are available.</p>
 {% endif %}
 
-<hr>
-
-{% if rulebook_list %}
-	<h1>Here are the rulebooks we have on file.</h1>
-	<ul>
-    {% for rulebook in rulebook_list %}
-        <li><a href="/rulebook/{{ rulebook.id }}/">{{ rulebook }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No rulebooks are available.</p>
-{% endif %}
+<a href="/house/new"> Create House </a>
 
 <hr>
 
-{% if rule_list %}
-	<h1>Here are the rules we have on file.</h1>
-    <ul>
-    {% for rule in rule_list %}
-        <li><a href="/rule/{{ rule.id }}/">{{ rule }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No rules are available.</p>
-{% endif %}
+<a href="/dev"> Go to dev </a>
 
-<hr>
+
+
