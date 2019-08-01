@@ -1,14 +1,16 @@
 <h1>{{ House }}</h1>
 
-{% if Rulebooks %}
-	<h1>Here are the rules we have on file.</h1>
+<hr> 
+
+{% if rulebook_list %}
+	<h1>Here are the rulebooks we have on file.</h1>
 	<ul>
-    {% for Rulebook in Rulebooks %}
-        <li><a href="/rulebook/{{ Rulebook.id }}/">{{ Rulebook.Rulebook_name }}</a></li>
+    {% for rulebook in rulebook_list %}
+        <li><a href="/rulebook/{{ rulebook.id }}/">{{ rulebook.rulebook_name }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
     <p>No rulebooks are available.</p>
-{% endif %}
+{% endif %} 
 
 

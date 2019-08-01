@@ -1,9 +1,11 @@
 <h1> {{ Rulebook }} </h1>
 
-{% if rules %}
+<hr> 
+
+{% if rule_list %}
 	<h1>Here are the rules we have on file.</h1>
 	<ul>
-    {% for rule in rules %}
+    {% for rule in rule_list %}
         <li><a href="/rule/{{ rule.id }}/">{{ rule.rule_name }}</a></li>
     {% endfor %}
     </ul>
@@ -14,5 +16,7 @@
 <hr>
 
 <p>This rule is a part of the {{Rulebook.parent_house}}.</p>
+
+<a href = "/house/{{Rulebook.parent_house.id}}/">Return to the {{Rulebook.parent_house}} homepage.</a>
 
 
