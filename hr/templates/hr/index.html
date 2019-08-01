@@ -30,6 +30,11 @@
 
 {% if rule_list %}
 	<h1>Here are the rules we have on file.</h1>
+    <ul>
+    {% for rulebook in rulebook_list %}
+        <li><a href="/rulebook/{{ rulebook.id }}/">{{ rulebook }}</a></li>
+    {% endfor %}
+    </ul>
 {% else %}
     <p>No rules are available.</p>
 {% endif %}
