@@ -19,7 +19,7 @@ from hr import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name = "index"),
+    path('', views.index),
     path('hw/', views.HelloWorld),
 
     path('signup', views.signup),

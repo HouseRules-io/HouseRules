@@ -1,5 +1,10 @@
 devnotes
 
+1) add form links to house/rulebook/rule pages
+
+2) add css to forms
+
+3) add icon choice to forms and migrate
 
 
 Checkpoint
@@ -7,9 +12,8 @@ Checkpoint
 
 Problems to fix later:
 
-x) expand to entire screen width
+x) fix rule css
 
-x) remove underlines from buttons
 
 
 

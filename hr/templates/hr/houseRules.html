@@ -56,6 +56,10 @@
 	    <h2>No rulebooks are available.</h2>
 	{% endif %} 
 
+	<a href = "/">
+		<h2>Return to the homepage.</h2>
+	</a>
+
 	</div>
 
 
@@ -63,7 +67,7 @@
 	<div class="rules-items-container">
 
 		{% for rulebook in rulebook_list %}
-		<a href = "/rulebook/{{ rulebook.id }}/">
+		<a href = "/rulebook/{{ rulebook.id }}/" style="text-decoration:none">
 			<div class="rules-item password-item" tabindex="0">
 				<div class="rules-item-thumbnail">
 					<i class="fas fa-beer" aria-hidden="true"></i>
@@ -84,6 +88,14 @@
 
 
 </main>
+
+<nav class="sidebar">
+
+	<button class="collapse-btn menu-btn btn" aria-label="Expand Menu" title="Expand Menu">
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </button>
+
+</nav>
 
 </body>
 
