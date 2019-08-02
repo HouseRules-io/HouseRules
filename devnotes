@@ -1,20 +1,17 @@
-devnotes
+Next steps: 
 
-CHECK 1) add form links to house/rulebook/rule pages
+1) add icon choice to forms and migrate
 
-2) add css to forms
+2) log-in and log-out
 
-3) add icon choice to forms and migrate
+3) house to user authentication
 
-4) log-in and log-out
+4) "house ruler" block that auto-fills with creator
 
-5) house to user authentication
-
-
-Checkpoint---
+5) give gray arrow reverse functionality and flip it
 
 
-Problems to fix later:
+Non-pressing problems to fix later:
 
 x) fix rule css
 

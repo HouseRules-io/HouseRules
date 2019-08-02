@@ -1,25 +1,105 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% block css_js %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel = "stylesheet" type = "text/css" href = "{% static 'hr/forms/style.css' %}"/>
+    <script src="https://kit.fontawesome.com/74514636f8.js"></script>
+  {% endblock %}
+
+  <title>Create Rule</title>
+</head>
+
+<body>
+
 {% block content %}
 
-  <h2>Create a new rule.</h2>
-  <form method="post">
+<main class="main-content">
 
-    {% csrf_token %}
+  <!-- Masthead -->
 
-    {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </p>
-    {% endfor %}
+  <div class="masthead">
 
-    <button type="submit">Create rule!!</button>
+    <div class="logo">
+      <h1>House Rules<i class="fas fa-home logo-icon" aria-hidden="true"></i></h1>
+    </div>
 
-  </form>
+    <div class="rules-search">
+      <form>
+        <input type="search" class="search-input" placeholder="search" aria-label="search rules">
+        <i class="fas fa-search search-icon" aria-hidden="true"></i>
+      </form>
+    </div>
+
+    <div class="user-settings" tabindex="0" aria-label="User Settings">
+      <div class="user-image">
+        <i class="fas fa-user-circle" aria-hidden="true"></i>
+      </div>
+      <ul class="user-info">
+        <li class="user-email">placeholder@email.com</li>
+        <li class="user-type">Proud Homeowner</li>
+      </ul>
+    </div>
+
+  </div>
+  <!-- End of masthead -->
+
+
+
+
+  <!-- Form Begins -->
+  <div class = "form-cont">
+
+  <div class = "form-controls">
+
+    <form method="post">
+
+      {% csrf_token %}
+
+      <p>Create a new rule!</p>
+      <br>
+
+      {% for field in form %}
+        <p>
+          {{ field.label_tag }}<br>
+          {{ field }}
+          {% if field.help_text %}
+            <small style="color: grey">{{ field.help_text }}</small>
+          {% endif %}
+          {% for error in field.errors %}
+            <p style="color: red">{{ error }}</p>
+          {% endfor %}
+        </p>
+      {% endfor %}
+
+      <button type="submit">Create rule!!</button>
+    </form>
+
+  </div>
+  </div>
+
+  <div id = "footer" align = "center">
+      <p> Copyright 2019 by Bet On It, LLC.  All Rights Reserved. </p>
+  </div>
+
+  <!-- Form ends -->
+
+
+
+</main>
+
+<nav class="sidebar">
+
+  <button class="collapse-btn menu-btn btn" aria-label="Expand Menu" title="Expand Menu">
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </button>
+
+</nav>
 
 {% endblock %}
+
+</body>
