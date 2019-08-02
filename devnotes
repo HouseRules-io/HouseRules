@@ -1,18 +1,24 @@
 devnotes
 
-1) add form links to house/rulebook/rule pages
+CHECK 1) add form links to house/rulebook/rule pages
 
 2) add css to forms
 
 3) add icon choice to forms and migrate
 
+4) log-in and log-out
 
-Checkpoint
+5) house to user authentication
+
+
+Checkpoint---
 
 
 Problems to fix later:
 
 x) fix rule css
+
+x) fix "create" css
 
 
 

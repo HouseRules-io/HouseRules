@@ -214,6 +214,13 @@ body {
     padding: 0 5rem 1.5rem;
 }
 
+.rules-items-controls h2 {
+    flex: 1;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #808080;
+}
+
 
 .rules-item {
     display: flex;

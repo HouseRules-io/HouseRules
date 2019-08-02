@@ -50,7 +50,7 @@ def newHouse(request):
 		form = HouseForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return redirect('index')
+			return redirect('/')
 	else:
 		form = HouseForm()
 	return render(request, 'hr/newHouse.html', {'form': form})
@@ -60,7 +60,7 @@ def newRulebook(request):
 		form = RulebookForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return redirect('index')
+			return redirect('/')
 	else:
 		form = RulebookForm()
 	return render(request, 'hr/newRulebook.html', {'form': form})
@@ -70,7 +70,7 @@ def newRule(request):
 		form = RuleForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return redirect('index')
+			return redirect('/')
 	else:
 		form = RuleForm()
 	return render(request, 'hr/newRule.html', {'form': form})
@@ -86,7 +86,7 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('index')
+            return redirect('/')
     else:
         form = SignUpForm()
     return render(request, 'hr/signup.html', {'form': form})
