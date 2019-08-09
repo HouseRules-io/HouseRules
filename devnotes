@@ -1,12 +1,12 @@
 Next steps: 
 
-1) add icon choice to forms and migrate
+1) fix base.html on everything
 
-2) log-in and log-out
+2) show user details on masthead
 
 3) house to user authentication
 
-4) "house ruler" block that auto-fills with creator
+4) "house ruler" form field for house that auto-fills with creator (just connect house to a user)
 
 5) give gray arrow reverse functionality and flip it
 

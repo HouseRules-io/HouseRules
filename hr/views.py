@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import login, authenticate
 from django.template import loader
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 
 from .models import House
@@ -45,6 +46,7 @@ def rulebook(request, Rulebook_id):
 	}
 	return HttpResponse(template.render(context, request))
 
+@login_required
 def newHouse(request):
 	if request.method == 'POST':
 		form = HouseForm(request.POST)
@@ -55,6 +57,7 @@ def newHouse(request):
 		form = HouseForm()
 	return render(request, 'hr/newHouse.html', {'form': form})
 
+@login_required
 def newRulebook(request):
 	if request.method == 'POST':
 		form = RulebookForm(request.POST)
@@ -65,6 +68,7 @@ def newRulebook(request):
 		form = RulebookForm()
 	return render(request, 'hr/newRulebook.html', {'form': form})
 
+@login_required
 def newRule(request):
 	if request.method == 'POST':
 		form = RuleForm(request.POST)

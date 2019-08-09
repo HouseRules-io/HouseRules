@@ -1,55 +1,10 @@
-{% load static %}
+{% extends 'hr/base.html' %}
 
-<!DOCTYPE html>
+{%block content%}
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  {% block css_js %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link rel = "stylesheet" type = "text/css" href = "{% static 'hr/forms/style.css' %}"/>
-    <script src="https://kit.fontawesome.com/74514636f8.js"></script>
-  {% endblock %}
-
-  <title>Create House</title>
-</head>
 
 <body>
-
-{% block content %}
-
-<main class="main-content">
-
-  <!-- Masthead -->
-
-  <div class="masthead">
-
-    <div class="logo">
-      <h1>House Rules<i class="fas fa-home logo-icon" aria-hidden="true"></i></h1>
-    </div>
-
-    <div class="rules-search">
-      <form>
-        <input type="search" class="search-input" placeholder="search" aria-label="search rules">
-        <i class="fas fa-search search-icon" aria-hidden="true"></i>
-      </form>
-    </div>
-
-    <div class="user-settings" tabindex="0" aria-label="User Settings">
-      <div class="user-image">
-        <i class="fas fa-user-circle" aria-hidden="true"></i>
-      </div>
-      <ul class="user-info">
-        <li class="user-email">placeholder@email.com</li>
-        <li class="user-type">Proud Homeowner</li>
-      </ul>
-    </div>
-
-  </div>
-  <!-- End of masthead -->
-
-
-
 
   <!-- Form Begins -->
   <div class = "form-cont">
@@ -82,24 +37,13 @@
   </div>
   </div>
 
-  <div id = "footer" align = "center">
-      <p> Copyright 2019 by Bet On It, LLC.  All Rights Reserved. </p>
-  </div>
-
   <!-- Form ends -->
 
 
 
 </main>
 
-<nav class="sidebar">
-
-  <button class="collapse-btn menu-btn btn" aria-label="Expand Menu" title="Expand Menu">
-            <i class="fas fa-arrow-right" aria-hidden="true"></i>
-        </button>
-
-</nav>
+</body>
 
 {% endblock %}
 
-</body>

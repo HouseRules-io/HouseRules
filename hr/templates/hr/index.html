@@ -1,52 +1,8 @@
-{% load static %}
+{% extends 'hr/base.html' %}
 
-<!DOCTYPE html>
-
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	{% block css_js %}
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-		<link rel = "stylesheet" type = "text/css" href = "{% static 'hr/house/style.css' %}"/>
-		<script src="https://kit.fontawesome.com/74514636f8.js"></script>
-	{% endblock %}
-
-	<title>{{Rulebook}}</title>
-</head>
+{%block content%}
 
 <body>
-
-<main class="main-content">
-
-	<!-- Masthead -->
-
-	<div class="masthead">
-
-		<div class="logo">
-			<h1>House Rules<i class="fas fa-home logo-icon" aria-hidden="true"></i></h1>
-		</div>
-
-		<div class="rules-search">
-			<form>
-				<input type="search" class="search-input" placeholder="search" aria-label="search rules">
-				<i class="fas fa-search search-icon" aria-hidden="true"></i>
-			</form>
-		</div>
-
-		<div class="user-settings" tabindex="0" aria-label="User Settings">
-			<div class="user-image">
-				<i class="fas fa-user-circle" aria-hidden="true"></i>
-			</div>
-			<ul class="user-info">
-				<li class="user-email">placeholder@email.com</li>
-				<li class="user-type">Proud Homeowner</li>
-			</ul>
-		</div>
-
-	</div>
-	<!-- End of masthead -->
-
-
 	<!-- Rules Header -->
 	<div class="rules-items-controls">
 
@@ -62,7 +18,7 @@
 		<a href = "/house/{{ house.id }}/" style="text-decoration:none">
 			<div class="rules-item password-item" tabindex="0">
 				<div class="rules-item-thumbnail">
-					<i class="fas fa-beer" aria-hidden="true"></i>
+					<i class="fas fa-home" aria-hidden="true"></i>
 				</div>
 				<div class="rules-item-info">
 					<h3 class="rules-item-name">{{ house.house_name }}</h3>
@@ -78,30 +34,8 @@
 
 	</div>
 
-	<div id = "footer" align = "center">
-      <p> Copyright 2019 by Bet On It, LLC.  All Rights Reserved. </p>
-    </div>
-
-
-</main>
-
-<nav class="sidebar">
-
-	<button class="collapse-btn menu-btn btn" aria-label="Expand Menu" title="Expand Menu">
-            <i class="fas fa-arrow-right" aria-hidden="true"></i>
-        </button>
-
-</nav>
 
 </body>
 
-<!--
-
-<a href="/house/new"> Create House </a>
-
-<hr>
-
-<a href="/dev"> Go to dev </a>
-
-
+{%endblock%}
 

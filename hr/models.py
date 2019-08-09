@@ -11,6 +11,7 @@ class House(models.Model):
 class Rulebook(models.Model):
 	rulebook_name = models.CharField(max_length=50)
 	parent_house = models.ForeignKey(House, default = "0000000", on_delete=models.CASCADE)
+	icon_link = models.CharField(max_length=20)
 
 	def __str__(self):
 		return self.parent_house.__str__() + "'s " + self.rulebook_name + " Rules"
