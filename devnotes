@@ -1,14 +1,16 @@
 Next steps: 
 
-CHECK 1) fix base.html on everything
+1) make rulebook and rule forms only show options for the user's house/rulebook instead of all of them
 
-CHECK 2) show user details on masthead
+2) take a long hard think about if any more fields need to be added
 
-CHECK 3) house to user authentication // fixing form to have creator field
+3) add sample houses, rulebooks, rules, users
 
-IRRELEVANT 4) "house ruler" form field for house that auto-fills with creator (just connect house to a user)
+4) upload to gcloud
 
-5) give gray arrow reverse functionality and flip it
+5) test on gcloud
+
+6) give permissions to nick and chaz
 
 
 Non-pressing problems to fix later:
