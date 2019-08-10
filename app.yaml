@@ -1,4 +1,5 @@
 runtime: python37
+entrypoint: gunicorn -b :$PORT houserules.wsgi:main
 
 handlers:
 
@@ -8,4 +9,5 @@ handlers:
 
 - url: /.*
   script: auto
+
 
