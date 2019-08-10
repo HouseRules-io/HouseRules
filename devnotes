@@ -33,7 +33,9 @@ x) fix login css, connecting to logmein class
 
 
 may need later:
-xAxiOlnjOewNbPAb
+postgres: xAxiOlnjOewNbPAb
+
+instance: house-rules-249409:us-east4:house-rules-db
 
 
 
