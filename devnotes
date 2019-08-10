@@ -17,6 +17,9 @@ Next steps:
 8) custom urls for houses that redirect to house pages
 
 
+https://console.cloud.google.com/logs/viewer?project=house-rules-249409&folder&organizationId&minLogLevel=0&expandAll=false&timestamp=2019-08-10T13:56:43.530000000Z&customFacets=&limitCustomFacetWidth=true&dateRangeStart=2019-08-10T12:56:43.790Z&dateRangeEnd=2019-08-10T13:56:43.790Z&interval=PT1H&resource=gae_app&logName=projects%2Fhouse-rules-249409%2Flogs%2Fstderr&logName=projects%2Fhouse-rules-249409%2Flogs%2Fappengine.googleapis.com%252Frequest_log&scrollTimestamp=2019-08-10T13:54:09.998708000Z
+
+
 Non-pressing problems to fix later:
 
 x) make rule css prettier
