@@ -64,7 +64,9 @@ def newRulebook(request):
 	if request.method == 'POST':
 		form = RulebookForm(request.POST)
 		if form.is_valid():
-			form.save()
+			new_rb = form.save(commit=False)
+			new_rb.creator = request.user
+			new_rb.save()
 			return redirect('/')
 	else:
 		form = RulebookForm()
@@ -75,7 +77,9 @@ def newRule(request):
 	if request.method == 'POST':
 		form = RuleForm(request.POST)
 		if form.is_valid():
-			form.save()
+			new_r = form.save(commit=False)
+			new_r.creator = request.user
+			new_r.save()
 			return redirect('/')
 	else:
 		form = RuleForm()
