@@ -4,9 +4,9 @@ CHECK 1) fix base.html on everything
 
 CHECK 2) show user details on masthead
 
-3) house to user authentication
+CHECK 3) house to user authentication // fixing form to have creator field
 
-4) "house ruler" form field for house that auto-fills with creator (just connect house to a user)
+IRRELEVANT 4) "house ruler" form field for house that auto-fills with creator (just connect house to a user)
 
 5) give gray arrow reverse functionality and flip it
 

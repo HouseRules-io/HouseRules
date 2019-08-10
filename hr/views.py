@@ -51,7 +51,9 @@ def newHouse(request):
 	if request.method == 'POST':
 		form = HouseForm(request.POST)
 		if form.is_valid():
-			form.save()
+			new_house = form.save(commit=False)
+			new_house.creator = request.user
+			new_house.save()
 			return redirect('/')
 	else:
 		form = HouseForm()
