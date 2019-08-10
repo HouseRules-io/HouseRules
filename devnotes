@@ -1,8 +1,8 @@
 Next steps: 
 
-1) fix base.html on everything
+CHECK 1) fix base.html on everything
 
-2) show user details on masthead
+CHECK 2) show user details on masthead
 
 3) house to user authentication
 
@@ -13,10 +13,9 @@ Next steps:
 
 Non-pressing problems to fix later:
 
-x) fix rule css
+x) make rule css prettier
 
-x) fix "create" css
+x) fix "create house" css
 
-
-
+x) fix login css, connecting to logmein class
 

@@ -131,6 +131,12 @@ body {
     background-color: #53b3d2;
 }
 
+.logmein {
+    font-color: #ffffff;
+    text-decoration: none;
+    font-size: 6rem;
+}
+
 .user-image {
     font-size: 3.2rem;
 }
