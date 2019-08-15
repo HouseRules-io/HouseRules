@@ -132,10 +132,11 @@ body {
 }
 
 .logmein {
-    font-color: #ffffff;
+    color: #ffffff;
     text-decoration: none;
     font-size: 2.5rem;
 }
+
 
 .user-image {
     font-size: 3.2rem;
@@ -218,6 +219,15 @@ body {
     align-content: flex-start;
     flex: 1;
     padding: 0 5rem 1.5rem;
+    justify-content: center;
+}
+
+.rules-items-container h2, a {
+    color: #808080;
+    font-size: 2rem;
+    border: auto;
+    border-color: #808080;
+    text-decoration: none;
 }
 
 .rules-items-controls h2 {
@@ -225,6 +235,7 @@ body {
     font-size: 1.9rem;
     font-weight: 700;
     color: #808080;
+    justify-content: center;
 }
 
 
@@ -238,6 +249,7 @@ body {
     border-radius: 0.2rem;
     box-shadow: 0 0.1rem 0.3rem rgba(0, 24, 48, 0.2);
     cursor: pointer;
+    vertical-align: center;
 }
 
 .rules-item-info {
@@ -418,7 +430,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
     .rules-controls-menu {
         display: grid;
         grid-row-gap: 1.8rem;
-        align-content: start;
+        align-content: center;
     }
 
     .user-settings {

@@ -46,7 +46,9 @@
 			</ul>
 			{% endif %}
 			{% if not user.is_authenticated %}
-				<a class='logmein' href='/accounts/login'>Login!</a>
+				<a class='logmein' href='/accounts/login'>
+					<h1>Login!</h1>
+				</a>
 			{% endif %}
 			</ul>
 		</div>

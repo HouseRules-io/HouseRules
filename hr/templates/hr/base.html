@@ -23,7 +23,7 @@
 	<div class="masthead">
 
 		<div class="logo">
-			<h1>House Rules<i class="fas fa-home logo-icon" aria-hidden="true"></i></h1>
+			<h1>House Rules<i class="fas fa-home logo-icon" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;|    </h1>
 		</div>
 
 		<!--
@@ -36,9 +36,11 @@
 		-->
 
 		<div class="user-settings" tabindex="0" aria-label="User Settings">
+			<!--
 			<div class="user-image">
 				<i class="fas fa-user-circle" aria-hidden="true"></i>
 			</div>
+			-->
 			{% if user.is_authenticated %}
 			<ul class="user-info">
 				<li class="user-email">{{user.get_username}}</li>
@@ -46,7 +48,9 @@
 			</ul>
 			{% endif %}
 			{% if not user.is_authenticated %}
-				<a class='logmein' href='/accounts/login'>Login!</a>
+				<a class='logmein' href='/accounts/login'>
+					<h1>Login!</h1>
+				</a>
 			{% endif %}
 			</ul>
 		</div>

@@ -1,8 +1,8 @@
-Next steps: 
+code: 
 
-HALF CHECK 1) make rulebook and rule forms only show options for the user's house/rulebook instead of all of them
+1) make the parent_rulebook and parent_house auto-fill to the rulebook/house you clicked from
 
-2) better config for mobile
+2) better config for mobile | fix zoom out issue
 
 3) drag and drop icons
 
@@ -16,6 +16,13 @@ x) make rule css prettier
 x) fix "create house" css
 
 x) fix login css, connecting to logmein class
+
+
+
+
+biz:
+
+1) recontact dave beatty
 
 
 
