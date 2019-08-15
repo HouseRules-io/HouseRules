@@ -65,9 +65,12 @@ def newRulebook(request):
 		form = RulebookForm(request.POST)
 		if form.is_valid():
 			new_rb = form.save(commit=False)
-			new_rb.creator = request.user
-			new_rb.save()
-			return redirect('/')
+			if new_rb.parent_house.creator == request.user:
+				new_rb.creator = request.user
+				new_rb.save()
+				return redirect('/')
+			else:
+				return redirect('/')
 	else:
 		form = RulebookForm()
 	return render(request, 'hr/newRulebook.html', {'form': form})
@@ -78,9 +81,12 @@ def newRule(request):
 		form = RuleForm(request.POST)
 		if form.is_valid():
 			new_r = form.save(commit=False)
-			new_r.creator = request.user
-			new_r.save()
-			return redirect('/')
+			if new_r.parent_rulebook.parent_house.creator == request.user:
+				new_r.creator = request.user
+				new_r.save()
+				return redirect('/')
+			else:
+				return redirect('/')
 	else:
 		form = RuleForm()
 	return render(request, 'hr/newRule.html', {'form': form})

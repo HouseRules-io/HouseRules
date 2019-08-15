@@ -390,7 +390,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
     .rules-items-container {
         display: grid;
-        grid-template-columns: repeat(auto-fill, 27rem);
+        grid-template-columns: repeat(auto-fit, 27rem);
         grid-gap: 3rem 1.5rem;
     }
 

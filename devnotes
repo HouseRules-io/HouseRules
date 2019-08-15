@@ -1,23 +1,12 @@
 Next steps: 
 
-1) make rulebook and rule forms only show options for the user's house/rulebook instead of all of them
+HALF CHECK 1) make rulebook and rule forms only show options for the user's house/rulebook instead of all of them
 
-2) take a long hard think about if any more fields need to be added
+2) better config for mobile
 
-3) add sample houses, rulebooks, rules, users
+3) drag and drop icons
 
-4) upload to gcloud
-
-5) test on gcloud
-
-6) give permissions to nick and chaz
-
-7) 404 / general error page
-
-8) custom urls for houses that redirect to house pages
-
-
-https://console.cloud.google.com/logs/viewer?project=house-rules-249409&folder&organizationId&minLogLevel=0&expandAll=false&timestamp=2019-08-10T13:56:43.530000000Z&customFacets=&limitCustomFacetWidth=true&dateRangeStart=2019-08-10T12:56:43.790Z&dateRangeEnd=2019-08-10T13:56:43.790Z&interval=PT1H&resource=gae_app&logName=projects%2Fhouse-rules-249409%2Flogs%2Fstderr&logName=projects%2Fhouse-rules-249409%2Flogs%2Fappengine.googleapis.com%252Frequest_log&scrollTimestamp=2019-08-10T13:54:09.998708000Z
+4) custom urls for houses that redirect to house pages
 
 
 Non-pressing problems to fix later:
@@ -32,10 +21,11 @@ x) fix login css, connecting to logmein class
 
 
 
+
 may need later:
 postgres: xAxiOlnjOewNbPAb
 
-instance: house-rules-249409:us-east4:house-rules-db
+instance: cloud_sql_proxy.exe -instances "house-rules-249409:us-east4:house-rules-db=tcp:3306"
 
 
 
