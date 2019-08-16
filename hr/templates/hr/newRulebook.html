@@ -2,6 +2,12 @@
 
 {%block title%}Create Rulebook{%endblock%}
 
+<script>
+    function autoFill(testing) {
+        document.getElementById('testID').value = testing;           
+    }
+</script>
+
 {%block content%}
 
   <!-- Form Begins -->
@@ -9,7 +15,7 @@
 
   <div class = "form-controls">
 
-    <form method="post">
+    <form method="post" id='entry-form'>
 
       {% csrf_token %}
 
@@ -28,6 +34,17 @@
           {% endfor %}
         </p>
       {% endfor %}
+
+      <div class="icon-container">
+        {% for i in '0123456789123452'|make_list %}
+          <div class = 'icon-item'>
+            <button type='button' form='entry-form' onclick="autofill('id_icon_link');">
+              <i class="fas fa-home logo-icon" aria-hidden="true"></i>
+              <p>fas fa-home</p>
+            </button>
+          </div>
+        {% endfor %}
+      </div>
 
       <button type="submit">Create rulebook!!</button>
     </form>

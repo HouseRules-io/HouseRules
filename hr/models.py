@@ -15,7 +15,7 @@ class House(models.Model):
 class Rulebook(models.Model):
 	rulebook_name = models.CharField(max_length=50)
 	parent_house = models.ForeignKey(House, default = "0000000", on_delete=models.CASCADE)
-	icon_link = models.CharField(max_length=20)
+	icon_link = models.CharField(max_length=25)
 
 	creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
@@ -26,6 +26,7 @@ class Rule(models.Model):
 	rule_name = models.CharField(max_length=50)
 	rule_text = models.CharField(max_length=500)
 	parent_rulebook = models.ForeignKey(Rulebook, default = "0000000", on_delete=models.CASCADE)
+	icon_link = models.CharField(max_length=25)
 
 	creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 

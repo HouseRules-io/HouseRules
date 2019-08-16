@@ -29,7 +29,18 @@
         </p>
       {% endfor %}
 
-      <button type="submit">Create rule!!</button>
+      <div class="icon-container">
+        {% for i in '0123456789123452'|make_list %}
+          <div class = 'icon-item'>
+            <button type='button' form='entry-form' onclick="autofill('id_icon_link');">
+              <i class="fas fa-home logo-icon" aria-hidden="true"></i>
+              <p>fas fa-home</p>
+            </button>
+          </div>
+        {% endfor %}
+      </div>
+
+      <button type="submit">Create rule!</button>
     </form>
 
   </div>
