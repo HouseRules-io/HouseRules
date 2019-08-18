@@ -55,11 +55,12 @@ body {
     padding: 0 1.5rem 0 3rem;
 }
 
-.logo h1 {
+.logo a, h1 {
     font-size: 2.5rem;
     font-weight: 600;
     letter-spacing: -0.1rem;
     white-space: nowrap;
+    color: #fff;
 }
 
 .logo-icon {
@@ -305,6 +306,41 @@ body {
     box-shadow: 0.4rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
 }
 
+.rules-item-box {
+    display: flex;
+    flex-basis: 10rem;
+    height: 10rem;
+    margin-top: 5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 3rem;
+    border-radius: 0.2rem;
+    box-shadow: 0 0.1rem 0.3rem rgba(0, 24, 48, 0.2);
+}
+
+.rules-item-box h2 {
+    padding-top: 0.5rem;
+    font-size: 4rem;
+    color: #808080;
+    margin-left: 5rem;
+}
+
+.rules-item-header {
+    display: flex;
+    flex-basis: 10rem;
+    height: 5rem;
+    align-items: center;
+    padding: 0rem 0rem;
+    background-color: #fafafa;
+}
+
+.rules-item-header h2 {
+    flex: 1;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #808080;
+}
+
+
 /* Sidebar */
 
 .sidebar {
@@ -354,6 +390,8 @@ body {
     box-shadow: 0 -0.2rem 0.2rem #36424b;
     z-index: 1;
 }
+
+
 
 .menu-btn {
     height: 4rem;

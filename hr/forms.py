@@ -27,4 +27,4 @@ class RulebookForm(ModelForm):
 class RuleForm(ModelForm):
     class Meta:
         model = Rule
-        fields = ['rule_name', 'rule_text', 'parent_rulebook']
+        fields = ['rule_name', 'rule_text', 'parent_rulebook', 'icon_link']

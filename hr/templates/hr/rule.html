@@ -7,24 +7,19 @@
 
 <body>
 
-
-	<!-- Rules Header -->
-	<div class="rules-items-controls">
-		<h2>Here is the {{Rule.rule_name}} Rule in {{Rule.parent_rulebook}}.</h2>
-
-	<a href = "/rulebook/{{Rule.parent_rulebook.id}}/">
-		<h2>Return to the {{Rule.parent_rulebook}} rulebook.</h2>
-	</a>
-
+	<div class="rules-item-header">
+		<h2>Here is the {{Rule.rule_name}} Rule in {{Rule.parent_rulebook}}:</h2>
 	</div>
 
-	<!-- Rules Header -->
-	<div class="rules-items-controls">
-
-		<h2>Here's the rule: {{Rule.rule_text}}</h2>
-
+	<div class="rules-item-box">
+		<h2>{{Rule.rule_text}}</h2>
 	</div>
 
+	<div class="rules-item-header">
+		<a href = "/rulebook/{{Rule.parent_rulebook.id}}/">
+			<h2>Return to the {{Rule.parent_rulebook}} rulebook.</h2>
+		</a>
+	</div>
 
 </body>
 

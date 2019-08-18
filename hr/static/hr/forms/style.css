@@ -10,6 +10,7 @@ body {
     position: relative;
 }
 
+
 #footer {
     font-size: 14px;
     color: #ffffff;
@@ -27,6 +28,11 @@ body {
     flex: 1;
     order: 1;
     text-decoration: none;
+}
+
+h4 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
 }
 
 /* masthead */
@@ -223,7 +229,8 @@ body {
     flex-wrap: wrap;
     align-content: flex-start;
     flex: 1;
-    padding: 2rem 0 0 0;
+    padding: 0rem 0 2rem 0;
+    margin-bottom: 1rem;
 }
 
 .icon-item {

@@ -1,28 +1,25 @@
 code: 
 
-1) make the parent_rulebook and parent_house auto-fill to the rulebook/house you clicked from
-
-2) better config for mobile | fix zoom out issue
-
-3) drag and drop icons WORKING ON IT ALSO ADD MODEL FIELD TO RULE YOU DUMBASS
-
-4) custom urls for houses that redirect to house pages
+2) custom urls for houses that redirect to house pages
 
 
 Non-pressing problems to fix later:
 
 x) make rule css prettier
 
-x) fix "create house" css
+x) fix zoom-out issue
 
-x) fix login css, connecting to logmein class
+x) 
 
 
 
 
 biz:
 
-1) recontact dave beatty
+1) figure out a way to get posters to clemson
+
+
+
 
 
 
@@ -32,7 +29,7 @@ biz:
 may need later:
 postgres: xAxiOlnjOewNbPAb
 
-instance: cloud_sql_proxy.exe -instances "house-rules-249409:us-east4:house-rules-db=tcp:3306"
+cloud_sql_proxy.exe -instances "house-rules-249409:us-east4:house-rules-db=tcp:3306"
 
 
 

@@ -4,6 +4,7 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="{% static 'hr/house/ico.ico' %}"/>
 
 	{% block css_js %}
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
@@ -27,9 +28,6 @@
 		</div>
 
 		<div class="user-settings" tabindex="0" aria-label="User Settings">
-			<div class="user-image">
-				<i class="fas fa-user-circle" aria-hidden="true"></i>
-			</div>
 			{% if user.is_authenticated %}
 			<ul class="user-info">
 				<li class="user-email">{{user.get_username}}</li>
