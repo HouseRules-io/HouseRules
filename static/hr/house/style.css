@@ -52,7 +52,7 @@ body {
     top: 0;
     background-color: #4e8ff1;
     color: #fff;
-    padding: 0 1.5rem 0 3rem;
+    padding: 0 0rem 0 3rem;
 }
 
 .logo a, h1 {
@@ -174,7 +174,7 @@ h1 {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
-    padding: 1.8rem 5rem;
+    padding: 1.8rem 3rem 1rem 3rem;
     background-color: #fafafa;
 }
 
@@ -313,7 +313,7 @@ h1 {
 .rules-item-box {
     display: flex;
     flex-basis: 10rem;
-    height: 10rem;
+    height: 25rem;
     margin-top: 5rem;
     margin-right: 1.5rem;
     margin-bottom: 3rem;
@@ -325,7 +325,7 @@ h1 {
     padding-top: 0.5rem;
     font-size: 4rem;
     color: #808080;
-    margin-left: 5rem;
+    margin-left: 3rem;
 }
 
 .rules-item-header {
