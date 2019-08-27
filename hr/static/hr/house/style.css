@@ -1,13 +1,24 @@
 :root {
     font-size: 10px;
+
+    --blue : #4e8ff1;
+    --dark-blue : #1E6AE1;
+    --red : #e1341e;
+    --purple : #961EE1;
+    --white : #F0F0F0;
+    --grey : #808080;
+    --teal : #53b3d2;
+    --black: #000;
 }
 
 body {
     font-family: "Open Sans", Arial, sans-serif;
     display: flex;
     min-height: 100vh;
-    background-color: #fafafa;
+    background-color: var(--white);
     position: relative;
+
+    border : 2px solid green;
 }
 
 #footer {
@@ -19,6 +30,8 @@ body {
     background: #808080;
     padding-top: 20px;
     padding-bottom: 20px;
+
+    border : 2px solid orange;
 }
 
 .main-content {
@@ -27,6 +40,8 @@ body {
     flex: 1;
     order: 1;
     text-decoration: none;
+
+    border : 2px solid purple;
 }
 
 .btn {
@@ -39,6 +54,8 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+
+    border : 2px dashed red;
 }
 
 /* masthead */
@@ -53,6 +70,8 @@ body {
     background-color: #4e8ff1;
     color: #fff;
     padding: 0 0rem 0 3rem;
+
+    border : 2px dashed blue;
 }
 
 .logo a, h1 {
@@ -61,6 +80,8 @@ body {
     letter-spacing: -0.1rem;
     white-space: nowrap;
     color: #fff;
+
+    border : 2px dashed cyan;
 }
 
 h1 {
