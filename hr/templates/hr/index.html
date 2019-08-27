@@ -6,10 +6,8 @@
 
 <!-- <body> -->
 	<!-- Rules Header -->
-	<div class="rules-items-controls">
-
+	<div>
 		<h2>Welcome to HouseRules!</h2>
-
 	</div>
 
 
@@ -17,14 +15,14 @@
 	<div class="rules-items-container">
 
 		{% for house in house_list %}
-		<a class="house-link" href = "/house/{{ house.id }}/" style="text-decoration:none">
-			<div class="rules-item password-item" tabindex="0">
-				<div class="rules-item-thumbnail">
+		<a href = "/house/{{ house.id }}/">
+			<div>
+				<div>
 					<i class="fas fa-home" aria-hidden="true"></i>
 				</div>
-				<div class="rules-item-info">
-					<h3 class="rules-item-name">{{ house.house_name }}</h3>
-					<h4 class="rules-item-summary">Find out the rules of {{ house }}...</h4>
+				<div>
+					<h3>{{ house.house_name }}</h3>
+					<h4>Find out the rules of {{ house }}...</h4>
 				</div>
 			</div>
 		</a>

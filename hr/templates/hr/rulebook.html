@@ -8,7 +8,7 @@
 
 
 	<!-- Rules Header -->
-	<div class="rules-items-controls">
+	<div>
 
 	{% if rule_list %}
 		<h2>Here are {{Rulebook}}.</h1>
@@ -23,14 +23,14 @@
 	<div class="rules-items-container">
 
 		{% for rule in rule_list %}
-		<a href = "/rule/{{ rule.id }}/" style="text-decoration:none">
-			<div class="rules-item password-item" tabindex="0">
-				<div class="rules-item-thumbnail">
+		<a href = "/rule/{{ rule.id }}/">
+			<div>
+				<div>
 					<i class="fas fa-beer" aria-hidden="true"></i>
 				</div>
-				<div class="rules-item-info">
-					<h3 class="rules-item-name">{{ rule.rule_name }}</h3>
-					<h4 class="rules-item-summary">Find out the rules of {{ rule.rule_name }}...</h4>
+				<div>
+					<h3>{{ rule.rule_name }}</h3>
+					<h4>Find out the rules of {{ rule.rule_name }}...</h4>
 				</div>
 			</div>
 		</a>
@@ -43,7 +43,7 @@
 
 	</div>
 
-	<div class="rules-item-header">
+	<div>
 		<a href = "/house/{{Rulebook.parent_house.id}}/">
 			<h2>Return to the {{Rulebook.parent_house}} homepage.</h2>
 		</a>

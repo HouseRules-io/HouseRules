@@ -23,13 +23,11 @@
 	<!-- Masthead -->
 
 	<div class="masthead">
-
-		<a href='/'>
-			<div class="logo">
+		<div class="logo">
+			<a href='/'>
 				<h1>HouseRules</h1>
-			</div>
-		</a>
-
+			</a>
+		</div>
 		<!--
 		<div class="rules-search">
 			<form>
@@ -39,36 +37,39 @@
 		</div>
 		-->
 
-		<div tabindex="0" aria-label="User Settings">
+		<div>
 			<!--
 			<div class="user-image">
 				<i class="fas fa-user-circle" aria-hidden="true"></i>
 			</div>
 			-->
 			{% if user.is_authenticated %}
-			<ul class="user-info">
+			<!-- <ul class="user-info">
 				<li class="user-email">{{user.get_username}}</li>
 				<li class="user-type">Proud Homeowner</li>
-			</ul>
+			</ul> -->
+
+			<h2>{{user.get_username}}</h2>
+
 			{% endif %}
 			{% if not user.is_authenticated %}
-				<a class='logmein' href='/accounts/login'>
+				<a href='/accounts/login'>
 					<h1> &nbsp;&nbsp;&nbsp;Login!</h1>
 				</a>
 			{% endif %}
-			</ul>
+			<!-- </ul> -->
 		</div>
-
 	</div>
 	<!-- End of masthead -->
 
+	<div class="content">
+		{%block content%}
+		{%endblock%}
+	</div>
 
-	{%block content%}
-	{%endblock%}
-
-<footer id = "footer" align = "center">
-      <p> Copyright 2019 by Bet On It, LLC.  All Rights Reserved. </p>
-</footer>
+	<footer class="footer" align = "center">
+	      <p> Copyright 2019 by Bet On It, LLC.  All Rights Reserved. </p>
+	</footer>
 
 <!-- </main> -->
 
