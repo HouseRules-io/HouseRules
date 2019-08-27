@@ -8,7 +8,8 @@
 
 	{% block css_js %}
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-		<link rel = "stylesheet" type = "text/css" href = "{% static 'hr/house/style.css' %}"/>
+		<!-- <link rel = "stylesheet" type = "text/css" href = "{% static 'hr/house/style.css' %}"/> -->
+		<link rel="stylesheet" type="text/css" href="{% static '/global.css' %}" />
 		<script src="https://kit.fontawesome.com/74514636f8.js"></script>
 	{% endblock %}
 
@@ -17,7 +18,7 @@
 
 <body>
 
-<main class="main-content">
+<!-- <main class="main-content"> -->
 
 	<!-- Masthead -->
 
@@ -25,7 +26,7 @@
 
 		<a href='/'>
 			<div class="logo">
-					<h1>HouseRules<!-- <i class="fas fa-home logo-icon" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;| -->    </h1>
+				<h1>HouseRules</h1>
 			</div>
 		</a>
 
@@ -38,7 +39,7 @@
 		</div>
 		-->
 
-		<div class="user-settings" tabindex="0" aria-label="User Settings">
+		<div tabindex="0" aria-label="User Settings">
 			<!--
 			<div class="user-image">
 				<i class="fas fa-user-circle" aria-hidden="true"></i>
@@ -69,7 +70,7 @@
       <p> Copyright 2019 by Bet On It, LLC.  All Rights Reserved. </p>
 </footer>
 
-</main>
+<!-- </main> -->
 
 <!--
 <nav class="sidebar">

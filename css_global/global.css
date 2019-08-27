@@ -1,0 +1,24 @@
+/*
+* @Author: Charlie Gallentine
+* @Date:   2019-08-27 16:02:38
+* @Last Modified by:   Charlie Gallentine
+* @Last Modified time: 2019-08-27 16:12:56
+*/
+
+:root {
+    --blue : #4e8ff1;
+    --dark-blue : #1E6AE1;
+    --red : #e1341e;
+    --purple : #961EE1;
+    --white : #FFF;
+    --grey : #808080;
+    --teal : #53b3d2;
+    --black: #000;
+}
+
+.masthead {
+	align-items: center;
+	background-color: var(--blue);
+	display: flex;
+	justify-content: center;
+}
