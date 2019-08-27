@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2019-08-27 16:02:38
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-08-27 16:31:33
+* @Last Modified time: 2019-08-27 17:34:06
 */
 
 :root {
@@ -26,19 +26,44 @@ body {
 
 }
 
+a {
+	color : none;
+	text-decoration : none;
+}
+
 .content {
 	height : 80vh;
 }
 
+.content-list {
+	margin : 0 auto;
+}
 
-.masthead {
-	align-items: center;
-	background-color: var(--blue);
-	display: flex;
-	height : 10vh;
-	justify-content: center;
-	max-height: 100px;
-	min-height: 50px;
+.content-list-name {
+	background-color: var(--dark-blue);
+	border-radius: 0 0 5px 5px;
+	color : white;
+	opacity: 0.8;
+	padding : 3px;
+}
+
+.content-list-view {
+	background-image : url(./placeholder.png);
+	background-position: center
+	background-repeat: no-repeat;
+	background-size: cover;
+	border : 1px solid var(--red);
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px var(--grey);
+	display : flex;
+	flex-direction: column;
+	height: 20vh;
+	margin : 0 auto;
+	margin-top: 10px;
+	max-height: 150px;
+	min-height: 80px;
+	justify-content: end;
+	width : 80vw;
 }
 
 .footer {
@@ -52,3 +77,30 @@ body {
 	max-height: 60px;
 	min-height: 50px;
 }
+
+.masthead {
+	align-items: center;
+	background-color: var(--blue);
+	display: flex;
+	height : 10vh;
+	justify-content: space-between;
+	max-height: 100px;
+	min-height: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

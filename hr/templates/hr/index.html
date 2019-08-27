@@ -6,24 +6,21 @@
 
 <!-- <body> -->
 	<!-- Rules Header -->
-	<div>
+	<!-- <div>
 		<h2>Welcome to HouseRules!</h2>
-	</div>
+	</div> -->
 
 
-	<!-- Actual Rules -->
-	<div class="rules-items-container">
+	<!-- Actual Houses -->
+	<div class="content-list">
 
 		{% for house in house_list %}
-		<a href = "/house/{{ house.id }}/">
-			<div>
-				<div>
+		<a href="/house/{{ house.id }}/">
+			<div class="content-list-view">
+<!-- 				<div>
 					<i class="fas fa-home" aria-hidden="true"></i>
-				</div>
-				<div>
-					<h3>{{ house.house_name }}</h3>
-					<h4>Find out the rules of {{ house }}...</h4>
-				</div>
+				</div> -->
+				<h3 class="content-list-name">{{ house.house_name }}</h3>
 			</div>
 		</a>
 		{% endfor %}
