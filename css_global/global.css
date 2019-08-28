@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2019-08-27 16:02:38
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-08-27 20:47:44
+* @Last Modified time: 2019-08-27 21:04:22
 */
 
 :root {
@@ -97,6 +97,14 @@ a:visited {
 	justify-content: center;
 	max-height: 60px;
 	min-height: 50px;
+}
+
+.house-owner-banner {
+	background-color: var(--red);
+	border-top : 2px solid var(--dark-blue);
+	color : var(--white);
+	padding : 7px 0;
+	text-align: center;
 }
 
 .logo {
