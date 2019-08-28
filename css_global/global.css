@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2019-08-27 16:02:38
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-08-27 21:18:45
+* @Last Modified time: 2019-08-27 21:46:38
 */
 
 :root {
@@ -25,7 +25,7 @@
 }
 
 body {
-
+	background-color: var(--white)
 }
 
 a {
@@ -63,11 +63,10 @@ a:visited {
 }
 
 .content-list-name {
-	background-color: var(--dark-blue);
-	border-radius: 0 0 5px 5px;
-	color : white;
-	/*opacity: 0.8;*/
-	padding : 8px;
+	background-color: var(--white);
+	color : var(--black);
+	font-weight: bold;
+	padding : 12px 0 3px 8px;
 }
 
 .content-list-view {
@@ -75,18 +74,16 @@ a:visited {
 	background-position: center
 	background-repeat: no-repeat;
 	background-size: cover;
-	border : 1px solid var(--red);
-	border-radius: 5px;
-	box-shadow: 3px 3px 5px var(--grey);
+	border-bottom : 2px solid var(--grey);
 	display : flex;
 	flex-direction: column;
 	height: 20vh;
+	justify-content: start;
 	margin : 0 auto;
-	margin-top: 10px;
+	margin-bottom: 3px;
 	max-height: 150px;
 	min-height: 80px;
-	justify-content: end;
-	width : 80vw;
+	width : 100vw;
 }
 
 .footer {
@@ -107,6 +104,12 @@ a:visited {
 	color : var(--white);
 	padding : 7px 0;
 	text-align: center;
+}
+
+.icon {
+	color : var(--black);
+	margin-left : 10px;
+	margin-bottom: 10px;
 }
 
 .logo {
@@ -133,8 +136,14 @@ a:visited {
 
 .user-login {
 	font-size : var(--font-medium);
-	padding : 0 10vw 0 0;
+	margin-right : 6px;
+	margin-left : 20px;
 	text-align: center;
+}
+
+.user-username {
+	display: flex;
+	padding : 0 10vw 0 0;
 }
 
 
