@@ -11,43 +11,58 @@
 	<div>
 
 	{% if rule_list %}
-		<h2>Here are {{Rulebook}}.</h1>
+		<h2 class="house-owner-banner">{{Rulebook}}</h1>
 	{% else %}
-	    <h2>No rules are available.</h2>
+	    <h2 class="house-owner-banner">No rules are available.</h2>
 	{% endif %} 
 
 	</div>
 
 
 	<!-- Actual Rules -->
-	<div class="rules-items-container">
+	<div class="content-list">
 
 		{% for rule in rule_list %}
 		<a href = "/rule/{{ rule.id }}/">
-			<div>
-				<div>
+			<!-- <div> -->
+				<!-- <div>
 					<i class="fas fa-beer" aria-hidden="true"></i>
+				</div> -->
+				<div class="content-list-view">
+					<h3 class="content-list-name">{{ rule.rule_name }}</h3>
+					<!-- <h4>Find out the rules of {{ rule.rule_name }}...</h4> -->
 				</div>
-				<div>
-					<h3>{{ rule.rule_name }}</h3>
-					<h4>Find out the rules of {{ rule.rule_name }}...</h4>
-				</div>
-			</div>
+			<!-- </div> -->
 		</a>
 		{% endfor %}
 
-		<a href="/rule/new"> 
+		<!-- <a href="/rule/new"> 
 			<h2>Create Rule</h2>
-		</a>
+		</a> -->
 
+		<div class="btn-main-sel">
+			<div class="btn">
+				<a href="/rule/new"> 
+					<h2>Create Rule</h2>
+				</a>
+			</div>
+		</div>
+
+		<div class="btn-main-sel">
+			<div class="btn">
+				<a href="/house/{{Rulebook.parent_house.id}}/"> 
+					<h2>Return to {{Rulebook.parent_house}}</h2>
+				</a>
+			</div>
+		</div>
 
 	</div>
 
-	<div>
+	<!-- <div>
 		<a href = "/house/{{Rulebook.parent_house.id}}/">
 			<h2>Return to the {{Rulebook.parent_house}} homepage.</h2>
 		</a>
-	</div>
+	</div> -->
 
 
 <!-- </body> -->

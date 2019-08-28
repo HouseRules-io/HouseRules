@@ -2,7 +2,7 @@
 * @Author: Charlie Gallentine
 * @Date:   2019-08-27 16:02:38
 * @Last Modified by:   Charlie Gallentine
-* @Last Modified time: 2019-08-27 21:04:22
+* @Last Modified time: 2019-08-27 21:18:45
 */
 
 :root {
@@ -43,11 +43,13 @@ a:visited {
 	border-radius: 5px;
 	box-shadow: 3px 3px 5px var(--grey);
 	padding : 10px;
+	text-align: center;
+	width : 80vw;
 }
 
 .btn-main-sel {
 	display : flex;
-	margin : 20px 0;  
+	margin : 10px 0;  
 	justify-content : center;
 	width : 100%;
 }
