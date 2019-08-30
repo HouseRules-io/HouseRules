@@ -2,7 +2,7 @@
 
 ## NEEDS
 
-### Logout feature/function
+### Logout feature/function ((accounts/logout does work but there's no link to it yet))
 ### Better fonts
 
 
