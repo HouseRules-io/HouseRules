@@ -164,6 +164,10 @@ h1 {
     justify-content: right;
 }
 
+/*.logmein:hover {
+    background-color: #53b3d2;
+    border: 10px solid white;
+}*/
 
 .user-image {
     font-size: 3.2rem;

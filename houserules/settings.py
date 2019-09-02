@@ -103,7 +103,7 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'HOST': 'localhost',
-            'PORT': '5432',
+            'PORT': '29920',
             'NAME': 'house-rules-db',
             'USER': 'postgres',
             'PASSWORD': 'postgres',

@@ -3,3 +3,4 @@ psycopg2==2.8.3
 django-googlecloud-storage
 djangorestframework
 gunicorn==19.7.1
+qrcode

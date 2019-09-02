@@ -49,6 +49,9 @@
 				<li class="user-email">{{user.get_username}}</li>
 				<li class="user-type">Proud Homeowner</li>
 			</ul>
+			<a class = 'logmein' href = '/accounts/logout'>
+				<h2> &nbsp;&nbsp;&nbsp;Logout </h2>
+			</a>
 			{% endif %}
 			{% if not user.is_authenticated %}
 				<a class='logmein' href='/accounts/login'>
