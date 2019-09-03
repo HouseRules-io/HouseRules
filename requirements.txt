@@ -4,3 +4,4 @@ django-googlecloud-storage
 djangorestframework
 gunicorn==19.7.1
 qrcode
+Pillow==5.3.0

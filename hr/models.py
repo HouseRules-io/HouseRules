@@ -1,9 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib import admin
 from django.conf import settings
 
 import qrcode
-# import StringIO
+from io import StringIO
 from django.urls import reverse
 from django.core.files.uploadedfile import InMemoryUploadedFile
 
@@ -14,38 +15,42 @@ class House(models.Model):
 	house_name = models.CharField(max_length=50, unique = True)
 
 	creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-	# qr_code = models.ImageField(upload_to = )
+	qr_code = models.ImageField(upload_to = 'images/qr_codes', default = 'default-qr.jpg')
 
 	def __str__(self):
 		return self.house_name
 
-	# def get_absolute_url(self):
- #        return reverse('events.views.details', args=[str(self.id)])
+	def save(self, *args, **kwargs):
+		self.gen_qr_code()
+		super(Model, self).save(*args, **kwargs)
 
-	# def gen_qr_code(self):
-	# 	qr = qrcode.QRCode(
- #            version=1,
- #            error_correction=qrcode.constants.ERROR_CORRECT_L,
- #            box_size=6,
- #            border=0,
- #        )
+	def get_absolute_url(self):
+		return reverse('events.views.details', args=[str(self.id)])
 
- #        qr.add_data(self.get_absolute_url())
- #        qr.make(fit=True)
+	def gen_qr_code(self):
+		qr = qrcode.QRCode(
+			version=1,
+			error_correction=qrcode.constants.ERROR_CORRECT_L,
+			box_size=6,
+			border=0,
+		)
 
- #        img = qr.make_image()
+		qr.add_data(self.get_absolute_url())
+		qr.make(fit=True)
 
- #        buffer = StringIO.StringIO()
- #        img.save(buffer)
- #        filename = 'house-qr-%s.png' % (self.id)
- #        filebuffer = InMemoryUploadedFile(
- #            buffer, None, filename, 'image/png', buffer.len, None)
- #        self.qrcode.save(filename, filebuffer)
+		img = qr.make_image()
+
+		buffer = StringIO.StringIO()
+		img.save(buffer)
+		filename = 'house-qr-%s.png' % (self.id)
+		filebuffer = InMemoryUploadedFile(
+			buffer, None, filename, 'image/png', buffer.len, None)
+		self.qrcode.save(filename, filebuffer)
 
 class Rulebook(models.Model):
 	rulebook_name = models.CharField(max_length=50)
 	parent_house = models.ForeignKey(House, default = "0000000", on_delete=models.CASCADE)
-	icon_link = models.CharField(max_length=25)
+	# icon_link = models.CharField(max_length=25)
 
 	creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 

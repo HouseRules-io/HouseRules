@@ -151,6 +151,15 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
 
+GOOGLE_CLOUD_STORAGE_PROJECT = 'house-rules'
+GOOGLE_CLOUD_STORAGE_BUCKET = 'hr-media-bucket'
+DEFAULT_FILE_STORAGE = 'django.googlecloud.storage.GoogleCloudStorage' 
+MEDIA_URL = "https://storage.googleapis.com/hr-media-bucket/"
+# MEDIA_ROOT = ""
+
 LOGIN_REDIRECT_URL = '/'
 
-GOOGLE_APPLICATION_CREDENTIALS = "GOOGLE_APPLICATION_CREDENTIALS"
+if not os.getenv('GAE_APPLICATION', None): 
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'C:/Users/ndeas/Desktop/house-rules-auth-key.json'
+else:
+    GOOGLE_APPLICATION_CREDENTIALS = "GOOGLE_APPLICATION_CREDENTIALS"
