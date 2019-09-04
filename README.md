@@ -17,4 +17,5 @@
 ###		Ability to custom position images
 ### Ability to like/favorite/save a house for future reference
 ### Ability to comment/share houses/rulebooks/rules
-
+ 
+ House Rules is a webapp that allows users to share the rules of their house with their friends.
