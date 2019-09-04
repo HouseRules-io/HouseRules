@@ -6,36 +6,34 @@
 
 <!-- <body> -->
 	<!-- Rules Header -->
-	<div class="rules-items-controls">
-
+	<!-- <div>
 		<h2>Welcome to HouseRules!</h2>
+	</div> -->
 
-	</div>
 
-
-	<!-- Actual Rules -->
-	<div class="rules-items-container">
+	<!-- Actual Houses -->
+	<div class="content-list">
 
 		{% for house in house_list %}
-		<a class="house-link" href = "/house/{{ house.id }}/" style="text-decoration:none">
-			<div class="rules-item password-item" tabindex="0">
-				<div class="rules-item-thumbnail">
+		<a href="/house/{{ house.id }}/">
+			<div class="content-list-view">
+<!-- 				<div>
 					<i class="fas fa-home" aria-hidden="true"></i>
-				</div>
-				<div class="rules-item-info">
-					<h3 class="rules-item-name">{{ house.house_name }}</h3>
-					<h4 class="rules-item-summary">Find out the rules of {{ house }}...</h4>
-				</div>
+				</div> -->
+				<h3 class="content-list-name">{{ house.house_name }}</h3>
 			</div>
 		</a>
+		<div><i class="icon far fa-heart"></i> <i class="icon far fa-comment"></i> <i class="icon fas fa-external-link-alt"></i></div>
 		{% endfor %}
-
-		<a href="/house/new"> 
-			<h2>Create House</h2>
-		</a>
-
 	</div>
 
+	<div class="btn-main-sel">
+		<div class="btn">
+			<a href="/house/new"> 
+				<h2>Create House</h2>
+			</a>
+		</div>
+	</div>
 
 <!-- </body> -->
 

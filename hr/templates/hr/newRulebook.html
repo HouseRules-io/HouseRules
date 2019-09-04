@@ -1,4 +1,4 @@
-{% extends 'hr/base_form.html' %}
+{% extends 'hr/base.html' %}
 
 {%block title%}Create Rulebook{%endblock%}
 
@@ -11,9 +11,9 @@
 {%block content%}
 
   <!-- Form Begins -->
-  <div class = "form-cont">
+  <div>
 
-  <div class = "form-controls">
+  <div>
 
     <form method="post" id='entry-form'>
 
@@ -27,10 +27,10 @@
           {{ field.label_tag }}<br>
           {{ field }}
           {% if field.help_text %}
-            <small style="color: grey">{{ field.help_text }}</small>
+            <small>{{ field.help_text }}</small>
           {% endif %}
           {% for error in field.errors %}
-            <p style="color: red">{{ error }}</p>
+            <p>{{ error }}</p>
           {% endfor %}
         </p>
       {% endfor %}

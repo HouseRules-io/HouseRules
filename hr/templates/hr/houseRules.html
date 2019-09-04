@@ -10,7 +10,7 @@
 	<div class="rules-items-controls">
 
 	{% if rulebook_list %}
-		<h2>Here are the rulebooks for {{House}}.</h1>
+		<h2 class="house-owner-banner">Rulebooks created by {{House}}.</h1>
 	{% else %}
 	    <h2>No rulebooks are available.</h2>
 	{% endif %} 
@@ -19,33 +19,34 @@
 
 
 	<!-- Actual Rules -->
-	<div class="rules-items-container">
+	<div class="content-list">
 
 		{% for rulebook in rulebook_list %}
-		<a href = "/rulebook/{{ rulebook.id }}/" style="text-decoration:none">
-			<div class="rules-item password-item" tabindex="0">
-				<div class="rules-item-thumbnail">
-					<i class = "{{rulebook.icon_link}}" aria-hidden = "true"></i>
+		<a href = "/rulebook/{{ rulebook.id }}/">
+			<!-- <div> -->
+				<div class="content-list-view">
+					<h3 class="content-list-name">{{ rulebook.rulebook_name }}</h3>
 				</div>
-				<div class="rules-item-info">
-					<h3 class="rules-item-name">{{ rulebook.rulebook_name }}</h3>
-					<h4 class="rules-item-summary">Find out the rules of {{ rulebook.rulebook_name }}...</h4>
-				</div>
-			</div>
+				<div><i class="icon far fa-heart"></i> <i class="icon far fa-comment"></i> <i class="icon fas fa-external-link-alt"></i></div>
+			<!-- </div> -->
 		</a>
 		{% endfor %}
 
-		<a href="/rulebook/new"> 
-			<h2>Create Rulebook</h2>
-		</a>
+		<div class="btn-main-sel">
+			<div class="btn">
+				<a href="/rulebook/new"> 
+					<h2>Create Rulebook</h2>
+				</a>
+			</div>
+		</div>
 
 	</div>
 
-	<div class="rules-item-header">
+	<!-- <div>
 		<a href = "/">
 			<h2>Return to the homepage.</h2>
 		</a>
-	</div>
+	</div> -->
 
 <!-- </body> -->
 
