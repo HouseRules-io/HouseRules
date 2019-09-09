@@ -19,7 +19,7 @@ from hr import views
 from django.conf.urls.static import static
 from django.conf import settings
 
-
+ 
 urlpatterns = [
     path('admin/', admin.site.urls, name = 'admin'),
     path('', views.index, name = 'index'),
@@ -30,7 +30,7 @@ urlpatterns = [
     path('dev', views.dev, name = 'dev'),
 
 
-    path('house/<int:House_id>/', views.house, name = 'house'),
+    path('house/<str:House_hex>/', views.house, name = 'house'),
     path('house/new', views.newHouse, name = 'new_house'),
     path('rulebook/<int:Rulebook_id>/', views.rulebook, name = 'rulebook'),
     path('rulebook/new/', views.newRulebook, name = 'new_rulebook'),

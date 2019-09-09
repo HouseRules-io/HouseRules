@@ -20,10 +20,22 @@ def HelloWorld(request):
     context = {}
     return HttpResponse(template.render(context, request))
 
-def house(request, House_id):
+# def house(request, House_id):
+# 	template = loader.get_template('hr/houseRules.html')
+# 	house = get_object_or_404(House, pk=House_id)
+# 	rulebook_list = Rulebook.objects.filter(parent_house = House_id)
+# 	#rulebook_list = Rulebook.objects.all()
+# 	context = {
+# 		'House' : house,
+# 		'rulebook_list' : rulebook_list
+# 	}
+# 	return HttpResponse(template.render(context, request))
+
+def house(request, House_hex):
+	house_id = int(House_hex, 16)
 	template = loader.get_template('hr/houseRules.html')
-	house = get_object_or_404(House, pk=House_id)
-	rulebook_list = Rulebook.objects.filter(parent_house = House_id)
+	house = get_object_or_404(House, pk=house_id)
+	rulebook_list = Rulebook.objects.filter(parent_house = house_id)
 	#rulebook_list = Rulebook.objects.all()
 	context = {
 		'House' : house,
@@ -54,6 +66,7 @@ def newHouse(request):
 			new_house = form.save(commit=False)
 			new_house.creator = request.user
 			new_house.save()
+			new_house.init_qr()
 			return redirect('/')
 	else:
 		form = HouseForm()
@@ -133,4 +146,5 @@ def index(request):
 	context = {
 		'house_list' : house_list,
 	}
+
 	return HttpResponse(template.render(context, request))
