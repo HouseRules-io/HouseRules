@@ -5,7 +5,7 @@ from django.conf import settings
 from django.core.files import File
 from django.core.files.base import ContentFile
 from django.utils.safestring import mark_safe
-
+from django.conf import settings
 
 import qrcode
 from io import BytesIO
@@ -41,7 +41,7 @@ class House(models.Model):
 		self.save()
 
 	def get_absolute_url(self):
-		return "https://houserulez.net" + reverse('house', args = [str(self.hex_id)])
+		return settings.BASE_URL + reverse('house', args = [str(self.hex_id)])
 		# return reverse('house', args=[str(self.hex_id)])
 
 	def gen_qr_code(self):

@@ -37,4 +37,6 @@ urlpatterns = [
     path('rule/<int:Rule_id>/', views.rule, name = 'rule'),
     path('rule/new/', views.newRule, name = 'new_rule'),
 
+    path('refresh_qr', views.refresh_qr, name = 'refresh_qr')
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

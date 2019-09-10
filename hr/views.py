@@ -148,3 +148,9 @@ def index(request):
 	}
 
 	return HttpResponse(template.render(context, request))
+
+@login_required
+def refresh_qr(request):
+	for house in House.objects.all():
+		house.gen_qr_code()
+	return redirect('index')

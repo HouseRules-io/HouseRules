@@ -163,3 +163,6 @@ if not os.getenv('GAE_APPLICATION', None):
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'C:/Users/ndeas/Desktop/house-rules-auth-key.json'
 else:
     GOOGLE_APPLICATION_CREDENTIALS = "GOOGLE_APPLICATION_CREDENTIALS"
+
+
+BASE_URL = "http://houserules.io"
