@@ -6,6 +6,7 @@ from django.core.files import File
 from django.core.files.base import ContentFile
 from django.utils.safestring import mark_safe
 from django.conf import settings
+from colorful.fields import RGBColorField
 
 import qrcode
 from io import BytesIO
@@ -22,6 +23,8 @@ class House(models.Model):
 
 	hex_id = models.CharField(max_length = 20)
 	qr_code = models.ImageField(upload_to = 'images/qr_codes', default = 'qr_codes/default-qr.jpg')
+
+	color = models.RGBColorField()
 
 	def image_tag(self):
 		return mark_safe('<img src="%s" width="150" height="150" />' % (self.qr_code.url))
