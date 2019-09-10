@@ -149,6 +149,18 @@ def index(request):
 
 	return HttpResponse(template.render(context, request))
 
+
+def my_houses(request):
+	template = loader.get_template('hr/my_houses.html')
+	house_list = request.user.houses
+	house_list.append(request.user.rec_houses)
+
+	context = {
+		'house_list' : house_list,
+	}
+
+	return HttpResponse(template.render(context, request))
+
 @login_required
 def refresh_qr(request):
 	for house in House.objects.all():

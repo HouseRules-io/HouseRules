@@ -86,3 +86,16 @@ class Rule(models.Model):
 
 	def __str__(self):
 		return self.rule_name + " for " + self.parent_rulebook.__str__()
+
+
+class Profile(models.Model):
+	user = models.OneToOneField(related_name = "profile", on_delete = models.CASCADE)
+
+	my_houses = models.ForeignKey(related_name = "creator_profile", on_delete = models.CASCADE)
+	rec_houses = models.ManyToManyField(related_name = "vistors", on_delete = models.CASCADE)
+
+
+	def add_rec_house(self, house):
+		self.rec_houses.add(house)
+		self.rec_houses.remove()
+		self.rec_house.save()
