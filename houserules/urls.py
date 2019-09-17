@@ -29,7 +29,7 @@ urlpatterns = [
     path('signup', views.signup, name = 'signup'),
     path('dev', views.dev, name = 'dev'),
 
-
+    path('my_houses/<slug:lat>/<slug:long>/', views.my_houses, name = 'my_houses')
     path('house/<str:House_hex>/', views.house, name = 'house'),
     path('house/new', views.newHouse, name = 'new_house'),
     path('rulebook/<int:Rulebook_id>/', views.rulebook, name = 'rulebook'),

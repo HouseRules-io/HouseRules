@@ -1,0 +1,56 @@
+{% extends 'hr/base.html' %}
+
+{%block title%}houserules.io{%endblock%}
+
+{%block content%}
+
+<!-- <body> -->
+	<!-- Rules Header -->
+	<div class="rules-items-controls">
+
+		<h2>Welcome to HouseRules!</h2>
+
+	</div>
+
+	<script>
+		function getLocation() {
+
+		    return navigator.geolocation.getCurrentPosition();
+		}
+
+		function update
+		if(navigator.geolocation) {
+			getLocation()
+		}
+	</script>
+
+
+
+	<!-- Actual Rules -->
+	<div class="rules-items-container">
+
+		{% for house in house_list %}
+		<a class="house-link" href = "/house/{{ house.hex_id }}/" style="text-decoration:none">
+			<div class="rules-item password-item" tabindex="0">
+				<div class="rules-item-thumbnail">
+					<i class="fas fa-home" aria-hidden="true"></i>
+				</div>
+				<div class="rules-item-info">
+					<h3 class="rules-item-name">{{ house.house_name }}</h3>
+					<h4 class="rules-item-summary">Find out the rules of {{ house }}...</h4>
+				</div>
+			</div>
+		</a>
+		{% endfor %}
+
+		<a href="/house/new"> 
+			<h2>Create House</h2>
+		</a>
+
+	</div>
+
+
+<!-- </body> -->
+
+{%endblock%}
+
