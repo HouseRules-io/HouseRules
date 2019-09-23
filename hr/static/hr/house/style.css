@@ -4,11 +4,15 @@
     --blue : #4e8ff1;
     --dark-blue : #1E6AE1;
     --red : #e1341e;
+    --pink : #f1442e;
     --purple : #961EE1;
     --white : #F0F0F0;
     --grey : #808080;
     --teal : #53b3d2;
     --black: #000;
+    --light-grey: #BBBBBB;
+    --dark-grey: #555555;
+    --green: #77dd77;
 }
 
 body {
@@ -164,6 +168,10 @@ h1 {
     justify-content: right;
 }
 
+/*.logmein:hover {
+    background-color: #53b3d2;
+    border: 10px solid white;
+}*/
 
 .user-image {
     font-size: 3.2rem;
@@ -187,6 +195,41 @@ h1 {
     font-size: 1.5rem;
 }
 
+
+
+
+
+.house-menu-container {
+    display: flex;
+    flex-direction: horizontal;
+    align-items: center;
+    margin: 0px;
+    padding: 20px;
+    background-color: var(--light-grey);
+    height: 2rem;
+    top: 10rem;
+}
+
+.house-menu-container a {
+    color: var(--dark-grey);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    transition: background-color 0.4s;
+    flex: 1;
+    text-align: center;
+}
+
+.house-menu-container .remove-house:hover {
+    background-color: var(--pink);
+}
+
+.house-menu-container .add-house:hover {
+    background-color: var(--green);
+}
+
+
+
 /* rules Items Controls */
 
 .rules-items-controls {
@@ -197,6 +240,7 @@ h1 {
     top: 6rem;
     padding: 1.8rem 3rem 1rem 3rem;
     background-color: #fafafa;
+    height: 4rem;
 }
 
 .rules-items-controls h2 {
@@ -245,9 +289,10 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    flex: 1;
+    flex: 0.75;
     padding: 0 0 0 0;
     justify-content: center;
+    margin-top:30px;
 }
 
 .rules-items-container h2, a {

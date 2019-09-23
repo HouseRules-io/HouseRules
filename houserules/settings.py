@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'colorful',
 ]
 
 MIDDLEWARE = [
@@ -151,6 +153,19 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
 
+GOOGLE_CLOUD_STORAGE_PROJECT = 'house-rules'
+GOOGLE_CLOUD_STORAGE_BUCKET = 'hr-media-bucket'
+DEFAULT_FILE_STORAGE = 'django.googlecloud.storage.GoogleCloudStorage' 
+MEDIA_URL = "https://storage.googleapis.com/hr-media-bucket/"
+# MEDIA_ROOT = ""
+
 LOGIN_REDIRECT_URL = '/'
 
-GOOGLE_APPLICATION_CREDENTIALS = "GOOGLE_APPLICATION_CREDENTIALS"
+if not os.getenv('GAE_APPLICATION', None): 
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'C:/Users/ndeas/Desktop/house-rules-auth-key.json'
+else:
+    GOOGLE_APPLICATION_CREDENTIALS = "GOOGLE_APPLICATION_CREDENTIALS"
+
+
+BASE_URL = "http://houserules.io"
+

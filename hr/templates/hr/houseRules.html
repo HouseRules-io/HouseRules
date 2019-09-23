@@ -9,11 +9,25 @@
 	<!-- Rules Header -->
 	<div class="rules-items-controls">
 
-	{% if rulebook_list %}
-		<h2>Here are the rulebooks for {{House}}.</h1>
-	{% else %}
-	    <h2>No rulebooks are available.</h2>
-	{% endif %} 
+		{% if rulebook_list %}
+			<h2>Here are the rulebooks for {{House}}.</h1>
+		{% else %}
+		    <h2>No rulebooks are available.</h2>
+		{% endif %} 
+
+	</div>
+
+	<div class = 'house-menu-container'>
+
+		{% if House in request.user.profile.my_houses %}
+			<a class = 'remove-house' href = '/add_house/{{ House.id }}/' style = "text-decoration:none">
+				Unfollow House
+			</a>
+		{% else %}
+			<a class = 'add-house' href = '/add_house/{{ House.id }}/' style = "text-decoration:none">
+				Follow House
+			</a>
+		{% endif %}
 
 	</div>
 

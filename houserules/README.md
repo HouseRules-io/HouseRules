@@ -1,2 +1,0 @@
-# HouseRules
- Trying to fix.

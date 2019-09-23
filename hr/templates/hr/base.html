@@ -13,6 +13,7 @@
 	{% endblock %}
 
 	<title> {% block title %} {% endblock %} </title>
+
 </head>
 
 <body>
@@ -37,6 +38,16 @@
 			</form>
 		</div>
 		-->
+		{% if user.is_authenticated %}
+		<div class = "user-settings" tabindex = "0" aria-label = "User Settings">
+			<a href = "{% url 'index' %}">
+				<ul href="user-info">
+					<li class="user-email">{{user.get_username}}</li>
+					<li class="user-type">Proud Homeowner</li>
+				</ul>
+			</a>
+		</div>
+		{% endif %}
 
 		<div class="user-settings" tabindex="0" aria-label="User Settings">
 			<!--
@@ -45,10 +56,9 @@
 			</div>
 			-->
 			{% if user.is_authenticated %}
-			<ul class="user-info">
-				<li class="user-email">{{user.get_username}}</li>
-				<li class="user-type">Proud Homeowner</li>
-			</ul>
+			<a class = 'logmein' href = '/accounts/logout'>
+				<h1> &nbsp;&nbsp;&nbsp;Logout </h1>
+			</a>
 			{% endif %}
 			{% if not user.is_authenticated %}
 				<a class='logmein' href='/accounts/login'>

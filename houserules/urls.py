@@ -16,22 +16,29 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from hr import views
+from django.conf.urls.static import static
+from django.conf import settings
 
+ 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.index),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('admin/', admin.site.urls, name = 'admin'),
+    path('', views.index, name = 'index'),
+    path('accounts/', include('django.contrib.auth.urls'), name = 'accounts'),
     path('hw/', views.HelloWorld),
 
     path('signup', views.signup, name = 'signup'),
-    path('dev', views.dev),
+    path('dev', views.dev, name = 'dev'),
 
+    path('my_houses/', views.my_houses, name = 'my_houses'),
+    path('house/<str:House_hex>/', views.house, name = 'house'),
+    path('house/new', views.newHouse, name = 'new_house'),
+    path('rulebook/<int:Rulebook_id>/', views.rulebook, name = 'rulebook'),
+    path('rulebook/new/', views.newRulebook, name = 'new_rulebook'),
+    path('rule/<int:Rule_id>/', views.rule, name = 'rule'),
+    path('rule/new/', views.newRule, name = 'new_rule'),
 
-    path('house/<int:House_id>/', views.house),
-    path('house/new', views.newHouse),
-    path('rulebook/<int:Rulebook_id>/', views.rulebook),
-    path('rulebook/new/', views.newRulebook),
-    path('rule/<int:Rule_id>/', views.rule),
-    path('rule/new/', views.newRule),
+    path('add_house/<int:house_id>/', views.add_house, name = 'add-house'),
 
-]
+    path('refresh_qr', views.refresh_qr, name = 'refresh_qr')
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
