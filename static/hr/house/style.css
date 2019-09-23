@@ -499,9 +499,11 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
     .rules-item {
         display: grid;
-        grid-template-rows: 1fr 5rem;
+        grid-template-rows: 1fr auto;
     }
+    /*Removed 5rem above*/
 
+    
     .side-bar {
         display: grid;
         grid-template-rows: auto minmax(auto, 1fr) auto;
