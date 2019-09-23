@@ -104,8 +104,6 @@ def newRule(request):
 		form = RuleForm()
 	return render(request, 'hr/newRule.html', {'form': form})
 
-
-
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -119,11 +117,6 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'hr/signup.html', {'form': form})
-
-
-
-
-
 
 def dev(request):
 	template = loader.get_template('hr/dev.html')
@@ -149,11 +142,10 @@ def index(request):
 
 	return HttpResponse(template.render(context, request))
 
-
+@login_required
 def my_houses(request):
 	template = loader.get_template('hr/my_houses.html')
-	house_list = request.user.houses
-	house_list.append(request.user.rec_houses)
+	house_list = request.user.profile.my_houses
 
 	context = {
 		'house_list' : house_list,
@@ -166,3 +158,14 @@ def refresh_qr(request):
 	for house in House.objects.all():
 		house.gen_qr_code()
 	return redirect('index')
+
+def add_house(request, house_id):
+	house = House.objects.get(id = house_id)
+	if request.user.visit_houses.filter(id = house_id).count() > 0:
+		print("House is in")
+		request.user.visit_houses.remove(house)
+	else:
+		request.user.visit_houses.add(house)
+
+	hex_id = hex(house_id)
+	return redirect('/house/' + hex_id + "/")

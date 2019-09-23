@@ -7,6 +7,8 @@ from django.core.files.base import ContentFile
 from django.utils.safestring import mark_safe
 from django.conf import settings
 from colorful.fields import RGBColorField
+from django.contrib.auth.models import AbstractUser
+
 
 import qrcode
 from io import BytesIO
@@ -16,15 +18,26 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 
 # Create your models here.
 
+class Profile(models.Model):
+
+	user = models.OneToOneField(User, related_name = "profile", on_delete = models.CASCADE)
+
+	@property
+	def my_houses(self):
+		my_houses = self.user.owned_houses.all()
+		my_houses = (my_houses | self.user.visit_houses.all())
+		return my_houses
+
 class House(models.Model):
 	house_name = models.CharField(max_length=50, unique = True)
 
-	creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+	creator = models.ForeignKey(User, related_name = "owned_houses", blank = True, null = True, on_delete=models.CASCADE)
+	followers = models.ForeignKey(User, related_name = "visit_houses", blank = True, null = True, on_delete=models.CASCADE)
 
 	hex_id = models.CharField(max_length = 20)
 	qr_code = models.ImageField(upload_to = 'images/qr_codes', default = 'qr_codes/default-qr.jpg')
 
-	color = models.RGBColorField()
+	# color = models.RGBColorField()
 
 	def image_tag(self):
 		return mark_safe('<img src="%s" width="150" height="150" />' % (self.qr_code.url))
@@ -90,15 +103,3 @@ class Rule(models.Model):
 	def __str__(self):
 		return self.rule_name + " for " + self.parent_rulebook.__str__()
 
-
-class Profile(models.Model):
-	user = models.OneToOneField(related_name = "profile", on_delete = models.CASCADE)
-
-	my_houses = models.ForeignKey(related_name = "creator_profile", on_delete = models.CASCADE)
-	rec_houses = models.ManyToManyField(related_name = "vistors", on_delete = models.CASCADE)
-
-
-	def add_rec_house(self, house):
-		self.rec_houses.add(house)
-		self.rec_houses.remove()
-		self.rec_house.save()

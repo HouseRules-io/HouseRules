@@ -181,6 +181,28 @@ h1 {
     font-size: 1.5rem;
 }
 
+
+
+
+.house-menu-container {
+    display: flex;
+    flex-direction: horizontal;
+    margin: 50px;
+    padding: 20px;
+    background-color: gray;
+    height: 100%;
+}
+
+.house-menu-container a {
+
+}
+
+.house-menu-container a:hover {
+    background-color: white;
+}
+
+
+
 /* rules Items Controls */
 
 .rules-items-controls {
@@ -190,7 +212,8 @@ h1 {
     position: sticky;
     top: 6rem;
     padding: 1.8rem 3rem 1rem 3rem;
-    background-color: var(--white);
+    background-color: red;
+    /*background-color: var(--white);*/
 }
 
 .rules-items-controls h2 {
@@ -430,8 +453,6 @@ h1 {
 .collapse-btn {
     height: 6rem;
 }
-
-
 
 
 /*

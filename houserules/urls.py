@@ -29,13 +29,15 @@ urlpatterns = [
     path('signup', views.signup, name = 'signup'),
     path('dev', views.dev, name = 'dev'),
 
-    path('my_houses/<slug:lat>/<slug:long>/', views.my_houses, name = 'my_houses')
+    path('my_houses/', views.my_houses, name = 'my_houses'),
     path('house/<str:House_hex>/', views.house, name = 'house'),
     path('house/new', views.newHouse, name = 'new_house'),
     path('rulebook/<int:Rulebook_id>/', views.rulebook, name = 'rulebook'),
     path('rulebook/new/', views.newRulebook, name = 'new_rulebook'),
     path('rule/<int:Rule_id>/', views.rule, name = 'rule'),
     path('rule/new/', views.newRule, name = 'new_rule'),
+
+    path('add_house/<int:house_id>/', views.add_house, name = 'add-house'),
 
     path('refresh_qr', views.refresh_qr, name = 'refresh_qr')
 
