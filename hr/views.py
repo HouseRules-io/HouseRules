@@ -162,10 +162,38 @@ def refresh_qr(request):
 def add_house(request, house_id):
 	house = House.objects.get(id = house_id)
 	if request.user.visit_houses.filter(id = house_id).count() > 0:
-		print("House is in")
 		request.user.visit_houses.remove(house)
 	else:
 		request.user.visit_houses.add(house)
 
 	hex_id = hex(house_id)
 	return redirect('/house/' + hex_id + "/")
+
+def del_house(request, house_id):
+	house = House.objects.get(id = house_id)
+	house.delete()
+	return redirect('/my_houses/')
+
+def copy_house(request, house_id):
+	house = House.objects.get(id = house_id)
+	house.pk = None
+	house.creator = request.user
+	house.house_name = house.house_name + "-copy"
+	house.save()
+	return redirect('/my_houses/')
+
+def del_rulebook(request, rulebook_id):
+	to_del_rb = Rulebook.objects.get(id = rulebook_id)
+	to_del_rb.delete()
+	return redirect('/my_houses/')
+
+def del_rule(request, rule_id):
+	to_del_rule = Rule.objects.get(id = rule_id)
+	to_del_rule.delete()
+	return redirect('/my-houses/')
+
+def copy_rulebook(request, rulebook_id):
+	return redirect('/my-houses/')
+
+def copy_rule(request, rulebook_id):
+	return redirect('/my-houses/')

@@ -38,6 +38,14 @@ urlpatterns = [
     path('rule/new/', views.newRule, name = 'new_rule'),
 
     path('add_house/<int:house_id>/', views.add_house, name = 'add-house'),
+    path('copy_house/<int:house_id>/', views.copy_house, name = 'copy-house'),
+    path('del_house/<int:house_id>/', views.del_house, name = 'del-house'),
+    path('copy_rulebook/<int:rulebook_id>/', views.copy_rulebook, name = "copy-rulebook"),
+    path('del_rulebook/<int:rulebook_id>/', views.del_rulebook, name = "del-rulebook"),
+    path('copy_rule/<int:rule_id>/', views.copy_rule, name = "copy-rule"),
+    path('del_rule/<int:rule_id>/', views.del_rule, name = "del-rule"),
+
+    # path('rb_copy')
 
     path('refresh_qr', views.refresh_qr, name = 'refresh_qr')
 
