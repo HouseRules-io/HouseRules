@@ -4,30 +4,38 @@
     --blue : #4e8ff1;
     --dark-blue : #1E6AE1;
     --red : #e1341e;
+    --pink : #f1442e;
     --purple : #961EE1;
-    --white : #FFF;
+    --white : #F0F0F0;
     --grey : #808080;
     --teal : #53b3d2;
     --black: #000;
+    --light-grey: #BBBBBB;
+    --dark-grey: #555555;
+    --green: #77dd77;
 }
 
 body {
     font-family: "Open Sans", Arial, sans-serif;
     display: flex;
     min-height: 100vh;
-    background-color: #fafafa;
+    background-color: var(--white);
     position: relative;
+
+    border : 2px solid green;
 }
 
 #footer {
     font-size: 14px;
-    color: var(--white);
+    color: #ffffff;
     width: 100%;
     height: 16%;
     text-align: center;
-    background: var(--grey);
+    background: #808080;
     padding-top: 20px;
     padding-bottom: 20px;
+
+    border : 2px solid orange;
 }
 
 .main-content {
@@ -36,11 +44,8 @@ body {
     flex: 1;
     order: 1;
     text-decoration: none;
-}
 
-.house-link {
-    border-radius: 15px;
-    border: 3px solid orange;
+    border : 2px solid purple;
 }
 
 .btn {
@@ -53,6 +58,8 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+
+    border : 2px dashed red;
 }
 
 /* masthead */
@@ -64,10 +71,11 @@ body {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    background-color: var(--blue);
+    background-color: #4e8ff1;
     color: #fff;
     padding: 0 0rem 0 3rem;
-    width: 100%;
+
+    border : 2px dashed blue;
 }
 
 .logo a, h1 {
@@ -75,11 +83,13 @@ body {
     font-weight: 600;
     letter-spacing: -0.1rem;
     white-space: nowrap;
-    color: var(--white);
+    color: #fff;
+
+    border : 2px dashed cyan;
 }
 
 h1 {
-    color: var(--white);
+    color: #fff;
 }
 
 .logo-icon {
@@ -102,7 +112,7 @@ h1 {
     width: 98%;
     background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
-    caret-color: var(--white);
+    caret-color: #fff;
     padding-left: 4.4rem;
     border: none;
 }
@@ -148,16 +158,20 @@ h1 {
 }
 
 .user-settings:hover {
-    background-color: var(--teal);
+    background-color: #53b3d2;
 }
 
 .logmein {
-    color: var(--white);
+    color: #ffffff;
     text-decoration: none;
     font-size: 2.5rem;
     justify-content: right;
 }
 
+/*.logmein:hover {
+    background-color: #53b3d2;
+    border: 10px solid white;
+}*/
 
 .user-image {
     font-size: 3.2rem;
@@ -184,21 +198,34 @@ h1 {
 
 
 
+
 .house-menu-container {
     display: flex;
     flex-direction: horizontal;
-    margin: 50px;
+    align-items: center;
+    margin: 0px;
     padding: 20px;
-    background-color: gray;
-    height: 100%;
+    background-color: var(--light-grey);
+    height: 2rem;
+    top: 10rem;
 }
 
 .house-menu-container a {
-
+    color: var(--dark-grey);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    transition: background-color 0.4s;
+    flex: 1;
+    text-align: center;
 }
 
-.house-menu-container a:hover {
-    background-color: white;
+.house-menu-container .remove-house:hover {
+    background-color: var(--pink);
+}
+
+.house-menu-container .add-house:hover {
+    background-color: var(--green);
 }
 
 
@@ -212,15 +239,15 @@ h1 {
     position: sticky;
     top: 6rem;
     padding: 1.8rem 3rem 1rem 3rem;
-    background-color: red;
-    /*background-color: var(--white);*/
+    background-color: #fafafa;
+    height: 4rem;
 }
 
 .rules-items-controls h2 {
     flex: 1;
     font-size: 1.9rem;
     font-weight: 700;
-    color: var(--grey);
+    color: #808080;
 }
 
 .rules-items-controls-group {
@@ -235,8 +262,8 @@ h1 {
     font-size: 2rem;
     width: 4.8rem;
     height: 4rem;
-    background-color: var(--white);
-    color: var(--grey);
+    background-color: #fff;
+    color: #808080;
     box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2);
     border-radius: 0.2rem;
     margin-right: 1rem;
@@ -248,12 +275,12 @@ h1 {
 }
 
 .rules-items-controls-btn:hover {
-    background-color: var(--grey);
+    background-color: #ddd;
 }
 
 .rules-items-controls-btn.current {
-    background-color: var(--grey);
-    color: var(--white);
+    background-color: #888;
+    color: #fff;
 }
 
 /* rules Items */
@@ -262,16 +289,17 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    flex: 1;
-    padding: 0;
+    flex: 0.75;
+    padding: 0 0 0 0;
     justify-content: center;
+    margin-top:30px;
 }
 
 .rules-items-container h2, a {
-    color: var(--grey);
+    color: #808080;
     font-size: 2rem;
     border: auto;
-    border-color: var(--grey);
+    border-color: #808080;
     text-decoration: none;
 }
 
@@ -279,7 +307,7 @@ h1 {
     flex: 1;
     font-size: 1.9rem;
     font-weight: 700;
-    color: var(--grey);
+    color: #808080;
     justify-content: center;
 }
 
@@ -302,7 +330,7 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: var(--white);
+    background-color: #fff;
     padding: 0 0.9rem;
     line-height: 1.2;
 }
@@ -310,14 +338,14 @@ h1 {
 .rules-item-name {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--dark-blue);
+    color: #465e7b;
     text-decoration: none
 }
 
 .rules-item-summary {
     font-size: 1.2rem;
     font-weight: 400;
-    color: var(--grey);
+    color: #666;
 }
 
 .rules-item-thumbnail {
@@ -326,11 +354,11 @@ h1 {
     align-items: center;
     flex: 1;
     font-size: 4.5rem;
-    color: var(--white);
+    color: #fff;
 }
 
 .password-item .rules-item-thumbnail {
-    background-color: var(--dark-blue);
+    background-color: #4e8ff1;
 }
 
 
@@ -342,8 +370,8 @@ h1 {
     height: 5.8rem;
     width: 5.8rem;
     font-size: 2.8rem;
-    background-color: var(--red);
-    color: var(--white);
+    background-color: #d32d27;
+    color: #fff;
     border-radius: 50%;
     box-shadow: 0.4rem 0.4rem 1rem rgba(0, 0, 0, 0.3);
 }
@@ -362,7 +390,14 @@ h1 {
 .rules-item-box h2 {
     padding-top: 0.5rem;
     font-size: 4rem;
-    color: var(--grey);
+    color: #808080;
+    margin-left: 3rem;
+}
+
+.rules-item-box h3 {
+    padding-top: 0.5rem;
+    font-size: 3rem;
+    color: #808080;
     margin-left: 3rem;
 }
 
@@ -372,14 +407,52 @@ h1 {
     height: 5rem;
     align-items: center;
     padding: 0rem 0rem;
-    background-color: var(--white);
+    background-color: #fafafa;
 }
 
 .rules-item-header h2 {
     flex: 1;
     font-size: 1.9rem;
     font-weight: 700;
-    color: var(--grey);
+    color: #808080;
+}
+
+
+/* About Page */
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    flex: 0.75;
+    padding: 0 0 0 0;
+    justify-content: center;
+    margin-top:30px;
+}
+
+.about-item-box {
+    display: flex;
+    flex-basis: 10rem;
+    height: 25rem;
+    margin-top: 5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 3rem;
+    border-radius: 0.2rem;
+    box-shadow: 0 0.1rem 0.3rem rgba(0, 24, 48, 0.2);
+}
+
+.about-item-box h2 {
+    padding-top: 0.5rem;
+    font-size: 4rem;
+    color: #808080;
+    margin-left: 3rem;
+}
+
+.about-item-box h3 {
+    padding-top: 0.5rem;
+    font-size: 3rem;
+    color: #808080;
+    margin-left: 3rem;
 }
 
 
@@ -394,8 +467,8 @@ h1 {
     top: 0;
     height: 100vh;
     font-size: 20px;
-    background-color: var(--dark-blue);
-    color: var(--blue);
+    background-color: #3c4a54;
+    color: #88959e;
 }
 
 .rules-controls-menu {
@@ -410,13 +483,13 @@ h1 {
 }
 
 .rules-controls-menu::-webkit-scrollbar-track {
-    background-color: var(--dark-blue);
+    background-color: #3c4a54;
 }
 
 .rules-controls-menu::-webkit-scrollbar-thumb {
-    background-color: var(--black);
+    background-color: #22313b;
     border-radius: 0.5rem;
-    border: 0.2rem solid var(--grey);
+    border: 0.2rem solid #3c4a54;
 }
 
 .rules-menu-group {
@@ -429,7 +502,7 @@ h1 {
 
 .rules-settings-menu {
     font-size: 2.4rem;
-    box-shadow: 0 -0.2rem 0.2rem var(--black);
+    box-shadow: 0 -0.2rem 0.2rem #36424b;
     z-index: 1;
 }
 
@@ -442,17 +515,19 @@ h1 {
 }
 
 .menu-btn:hover {
-    background-color: var(--teal);
+    background-color: #36424b;
 }
 
 .menu-btn.current {
-    background-color: var(--black);
-    color: var(--white);
+    background-color: #22313b;
+    color: #fff;
 }
 
 .collapse-btn {
     height: 6rem;
 }
+
+
 
 
 /*
@@ -499,11 +574,9 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
     .rules-item {
         display: grid;
-        grid-template-rows: 1fr auto;
+        grid-template-rows: 1fr 5rem;
     }
-    /*Removed 5rem above*/
 
-    
     .side-bar {
         display: grid;
         grid-template-rows: auto minmax(auto, 1fr) auto;
@@ -520,6 +593,13 @@ Remove or comment-out the code block below to see how the browser will fall-back
         grid-template-columns: repeat(3, auto);
         grid-column-gap: 1rem;
     }
+
+    .about-container {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-column-gap: 1rem;
+    }
+
 
     .user-info,
     .rules-item,

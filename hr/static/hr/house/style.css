@@ -394,6 +394,13 @@ h1 {
     margin-left: 3rem;
 }
 
+.rules-item-box h3 {
+    padding-top: 0.5rem;
+    font-size: 3rem;
+    color: #808080;
+    margin-left: 3rem;
+}
+
 .rules-item-header {
     display: flex;
     flex-basis: 10rem;
