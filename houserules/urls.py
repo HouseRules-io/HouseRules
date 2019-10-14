@@ -31,11 +31,11 @@ urlpatterns = [
 
     path('my_houses/', views.my_houses, name = 'my_houses'),
     path('house/<str:House_hex>/', views.house, name = 'house'),
-    path('house/new', views.newHouse, name = 'new_house'),
+    path('house/new/', views.newHouse, name = 'new_house'),
     path('rulebook/<int:Rulebook_id>/', views.rulebook, name = 'rulebook'),
-    path('rulebook/new/', views.newRulebook, name = 'new_rulebook'),
+    path('rulebook/new/<str:house_id>/', views.newRulebook, name = 'new_rulebook'),
     path('rule/<int:Rule_id>/', views.rule, name = 'rule'),
-    path('rule/new/', views.newRule, name = 'new_rule'),
+    path('rule/new/<str:rb_id>/', views.newRule, name = 'new_rule'),
 
     path('add_house/<int:house_id>/', views.add_house, name = 'add-house'),
     path('copy_house/<int:house_id>/', views.copy_house, name = 'copy-house'),

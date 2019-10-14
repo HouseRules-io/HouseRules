@@ -10,9 +10,9 @@
 	<div class="rules-items-controls">
 
 		{% if rulebook_list %}
-			<h2>Here are the rulebooks for {{House}}.</h1>
+			<h2>Here are the rulebooks for {{House}}.</h2>
 		{% else %}
-		    <h2>No rulebooks are available.</h2>
+		    <h2>No rulebooks are available for {{House}}.</h2>
 		{% endif %} 
 
 	</div>
@@ -73,7 +73,7 @@
 		{# </a> #}
 		{% endfor %}
 
-		<a href="/rulebook/new"> 
+		<a href="/rulebook/new/{{ House.id }}/"> 
 			<h2>Create Rulebook</h2>
 		</a>
 

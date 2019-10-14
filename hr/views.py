@@ -3,6 +3,8 @@ from django.contrib.auth import login, authenticate
 from django.template import loader
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.forms import model_to_dict
+
 
 
 from .models import House
@@ -73,33 +75,35 @@ def newHouse(request):
 	return render(request, 'hr/newHouse.html', {'form': form})
 
 @login_required
-def newRulebook(request):
+def newRulebook(request, house_id):
 	if request.method == 'POST':
 		form = RulebookForm(request.POST)
 		if form.is_valid():
 			new_rb = form.save(commit=False)
+			new_rb.parent_house = House.objects.get(id = house_id)
 			if new_rb.parent_house.creator == request.user:
 				new_rb.creator = request.user
 				new_rb.save()
-				return redirect('/')
+				return redirect('/house/' + new_rb.parent_house.hex_id + '/')
 			else:
-				return redirect('/')
+				return redirect('/house/' + new_rb.parent_house.hex_id + '/')
 	else:
 		form = RulebookForm()
 	return render(request, 'hr/newRulebook.html', {'form': form})
 
 @login_required
-def newRule(request):
+def newRule(request, rb_id):
 	if request.method == 'POST':
 		form = RuleForm(request.POST)
 		if form.is_valid():
 			new_r = form.save(commit=False)
+			new_r.parent_rulebook = Rulebook.objects.get(id = rb_id)
 			if new_r.parent_rulebook.parent_house.creator == request.user:
 				new_r.creator = request.user
 				new_r.save()
-				return redirect('/')
+				return redirect('/rulebook/' + rb_id + '/')
 			else:
-				return redirect('/')
+				return redirect('/rulebook/' + rb_id + '/')
 	else:
 		form = RuleForm()
 	return render(request, 'hr/newRule.html', {'form': form})
@@ -175,11 +179,9 @@ def del_house(request, house_id):
 	return redirect('/my_houses/')
 
 def copy_house(request, house_id):
-	house = House.objects.get(id = house_id)
-	house.pk = None
-	house.creator = request.user
-	house.house_name = house.house_name + "-copy"
-	house.save()
+	orig_house = House.objects.get(id = house_id)
+	orig_house.copy(request.user)
+	
 	return redirect('/my_houses/')
 
 def del_rulebook(request, rulebook_id):
