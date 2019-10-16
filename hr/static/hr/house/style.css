@@ -492,6 +492,49 @@ h1 {
 
 
 
+
+
+/* About Begin */
+.about-item-container {
+    /*height: 70rem;*/
+    border-style: solid;
+    border-width: .2rem;
+    font-size: 1rem;
+}
+
+.about-item-header {
+    height: 5rem;
+    margin-top: 1rem;
+}
+
+.about-item-header h2{
+    font-size: 4rem;
+}
+
+.about-item-box {
+    border-style: dotted;
+    border-width: .2rem;
+    border-color: green;
+    padding-bottom: 2rem;
+}
+
+.about-item-box h2 {
+    font-size: 3rem;
+}
+
+.about-item-box h3 {
+    font-size: 2rem;
+}
+
+
+
+/* About End */
+
+
+
+
+
+
 /*
 
 The following code will only run if your browser supports CSS grid.
