@@ -1,6 +1,9 @@
+{% extends 'hr/base.html' %}
+
+{%block title%}{{"Signup for HouseRules"}}{%endblock%}
+
 {% block content %}
 
-  <h2>Sign up</h2>
   <form method="post">
 
     {% csrf_token %}
@@ -18,7 +21,7 @@
       </p>
     {% endfor %}
 
-    <button type="submit">Sign up</button>
+    <button type="submit">Sign up!</button>
 
   </form>
 

@@ -25,6 +25,14 @@ body {
     border : 2px solid green;
 }
 
+body p, h2, h1, h3, td {
+    font-size: 2rem;
+}
+
+body form {
+    margin-bottom: 3rem;
+}
+
 #footer {
     font-size: 14px;
     color: #ffffff;
