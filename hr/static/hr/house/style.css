@@ -163,17 +163,23 @@ h1 {
     height: 100%;
     padding: 0 0rem;
     cursor: pointer;
+    width: 20%;
 }
 
 .user-settings:hover {
     background-color: #53b3d2;
 }
 
+.mastabout {
+    width: 20%;
+}
+
+
 .logmein {
     color: #ffffff;
     text-decoration: none;
     font-size: 2.5rem;
-    justify-content: right;
+    
 }
 
 /*.logmein:hover {

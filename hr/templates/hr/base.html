@@ -26,7 +26,7 @@
 
 		<a href='/'>
 			<div class="logo">
-					<h1>HouseRules<i class="fas fa-home logo-icon" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;| </h1>
+					<h1>HouseRules<i class="fas fa-home logo-icon" aria-hidden="true"></i></h1>
 			</div>
 		</a>
 
@@ -38,6 +38,17 @@
 			</form>
 		</div>
 		-->
+
+
+
+		<!-- ABOUT PAGE IN MASTHEAD 
+		<div class='mastabout'>
+			<a href='/about/'>
+				<h1>About</h1>
+			</a>
+		</div> -->
+		
+
 		{% if user.is_authenticated %}
 		<div class = "user-settings" tabindex = "0" aria-label = "User Settings">
 			<a href = "{% url 'index' %}">
