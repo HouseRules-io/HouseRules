@@ -179,7 +179,7 @@ h1 {
     color: #ffffff;
     text-decoration: none;
     font-size: 2.5rem;
-    
+    justify-content: right;
 }
 
 /*.logmein:hover {
