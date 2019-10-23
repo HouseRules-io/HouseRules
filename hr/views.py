@@ -3,6 +3,8 @@ from django.contrib.auth import login, authenticate
 from django.template import loader
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.forms import model_to_dict
+
 
 
 from .models import House
@@ -80,33 +82,35 @@ def newHouse(request):
 	return render(request, 'hr/newHouse.html', {'form': form})
 
 @login_required
-def newRulebook(request):
+def newRulebook(request, house_id):
 	if request.method == 'POST':
 		form = RulebookForm(request.POST)
 		if form.is_valid():
 			new_rb = form.save(commit=False)
+			new_rb.parent_house = House.objects.get(id = house_id)
 			if new_rb.parent_house.creator == request.user:
 				new_rb.creator = request.user
 				new_rb.save()
-				return redirect('/')
+				return redirect('/house/' + new_rb.parent_house.hex_id + '/')
 			else:
-				return redirect('/')
+				return redirect('/house/' + new_rb.parent_house.hex_id + '/')
 	else:
 		form = RulebookForm()
 	return render(request, 'hr/newRulebook.html', {'form': form})
 
 @login_required
-def newRule(request):
+def newRule(request, rb_id):
 	if request.method == 'POST':
 		form = RuleForm(request.POST)
 		if form.is_valid():
 			new_r = form.save(commit=False)
+			new_r.parent_rulebook = Rulebook.objects.get(id = rb_id)
 			if new_r.parent_rulebook.parent_house.creator == request.user:
 				new_r.creator = request.user
 				new_r.save()
-				return redirect('/')
+				return redirect('/rulebook/' + rb_id + '/')
 			else:
-				return redirect('/')
+				return redirect('/rulebook/' + rb_id + '/')
 	else:
 		form = RuleForm()
 	return render(request, 'hr/newRule.html', {'form': form})
@@ -169,10 +173,36 @@ def refresh_qr(request):
 def add_house(request, house_id):
 	house = House.objects.get(id = house_id)
 	if request.user.visit_houses.filter(id = house_id).count() > 0:
-		print("House is in")
 		request.user.visit_houses.remove(house)
 	else:
 		request.user.visit_houses.add(house)
 
 	hex_id = hex(house_id)
 	return redirect('/house/' + hex_id + "/")
+
+def del_house(request, house_id):
+	house = House.objects.get(id = house_id)
+	house.delete()
+	return redirect('/my_houses/')
+
+def copy_house(request, house_id):
+	orig_house = House.objects.get(id = house_id)
+	orig_house.copy(request.user)
+	
+	return redirect('/my_houses/')
+
+def del_rulebook(request, rulebook_id):
+	to_del_rb = Rulebook.objects.get(id = rulebook_id)
+	to_del_rb.delete()
+	return redirect('/my_houses/')
+
+def del_rule(request, rule_id):
+	to_del_rule = Rule.objects.get(id = rule_id)
+	to_del_rule.delete()
+	return redirect('/my-houses/')
+
+def copy_rulebook(request, rulebook_id):
+	return redirect('/my-houses/')
+
+def copy_rule(request, rulebook_id):
+	return redirect('/my-houses/')

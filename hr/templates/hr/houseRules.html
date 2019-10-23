@@ -10,24 +10,34 @@
 	<div class="rules-items-controls">
 
 		{% if rulebook_list %}
-			<h2>Here are the rulebooks for {{House}}.</h1>
+			<h2>Here are the rulebooks for {{House}}.</h2>
 		{% else %}
-		    <h2>No rulebooks are available.</h2>
+		    <h2>No rulebooks are available for {{House}}.</h2>
 		{% endif %} 
 
 	</div>
 
 	<div class = 'house-menu-container'>
 
-		{% if House in request.user.profile.my_houses %}
-			<a class = 'remove-house' href = '/add_house/{{ House.id }}/' style = "text-decoration:none">
-				Unfollow House
-			</a>
-		{% else %}
-			<a class = 'add-house' href = '/add_house/{{ House.id }}/' style = "text-decoration:none">
-				Follow House
+		{% if not House.creator.username == request.user.username %}
+			{% if House in request.user.profile.my_houses %}
+				<a class = 'remove-house' href = '/add_house/{{ House.id }}/' style = "text-decoration:none">
+					Unfollow House
+				</a>
+			{% else %}
+				<a class = 'add-house' href = '/add_house/{{ House.id }}/' style = "text-decoration:none">
+					Follow House
+				</a>
+			{% endif %}
+		{% else %}	
+			<a href = '/del_house/{{ House.id }}/' style = "text-decoration:none">
+				Delete House
 			</a>
 		{% endif %}
+
+		<a href = '/copy_house/{{ House.id }}/' style = "text-decoration:none">
+			Copy House
+		</a>
 
 	</div>
 
@@ -36,20 +46,34 @@
 	<div class="rules-items-container">
 
 		{% for rulebook in rulebook_list %}
-		<a href = "/rulebook/{{ rulebook.id }}/" style="text-decoration:none">
 			<div class="rules-item password-item" tabindex="0">
-				<div class="rules-item-thumbnail">
-					<i class = "{{rulebook.icon_link}}" aria-hidden = "true"></i>
-				</div>
-				<div class="rules-item-info">
-					<h3 class="rules-item-name">{{ rulebook.rulebook_name }}</h3>
-					<h4 class="rules-item-summary">Find out the rules of {{ rulebook.rulebook_name }}...</h4>
-				</div>
+				{% if rulebook.parent_house.creator.username == request.user.username %}
+					<div class = "rules-item-menu">
+						<a class = "rules-item-menu-option" href = "/del_rulebook/{{ rulebook.id }}" style = "color: #880000">
+							Delete
+						</a>
+						<a class = "rules-item-menu-option" href = "#" style = "color: #000088">
+							Copy
+						</a>
+					</div>
+				{% else %}
+					<div class = "rules-item-menu">
+
+					</div>
+				{% endif %}
+
+				<a class = "rules-item-content" href = "/rulebook/{{ rulebook.id }}/" style="text-decoration:none">
+				
+					<div class="rules-item-info">
+						<h3 class="rules-item-name">{{ rulebook.rulebook_name }}</h3>
+						<h4 class="rules-item-summary">Find out the rules of {{ rulebook.rulebook_name }}...</h4>
+					</div>
+				</a>
 			</div>
-		</a>
+		{# </a> #}
 		{% endfor %}
 
-		<a href="/rulebook/new"> 
+		<a href="/rulebook/new/{{ House.id }}/"> 
 			<h2>Create Rulebook</h2>
 		</a>
 

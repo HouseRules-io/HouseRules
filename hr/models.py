@@ -82,12 +82,36 @@ class House(models.Model):
 		# 	bbuffer, None, filename, 'image/png', bbuffer.getbuffer().nbytes, None)
 		self.qr_code.save(filename, img_content, save = True)#filebuffer)
 
+	def copy(self, user):
+		new_house = House.objects.create()
+		new_house.creator = user
+		new_house.house_name = self.house_name + '-copy'
+
+		for rb in new_house.rulebooks.all():
+			new_rb = rb.copy(self, user)
+
+		new_house.init_qr()
+
+		new_house.save()
+
 class Rulebook(models.Model):
 	rulebook_name = models.CharField(max_length=50)
-	parent_house = models.ForeignKey(House, default = "0000000", on_delete=models.CASCADE)
+	parent_house = models.ForeignKey(House, related_name = "rulebooks", default = "0000000", on_delete=models.CASCADE)
 	# icon_link = models.CharField(max_length=25)
 
 	creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+	def copy(self, house, user):
+		new_rb = Rulebook.objects.create()
+		new_rb.rulebook_name = self.rulebook_name
+		new_rb.parent_house = house
+		new_rb.creator = user
+
+		for rule in self.rules.all():
+			new_rule = rule.copy(self, user)
+
+		new_rb.save()
+
 
 	def __str__(self):
 		return self.parent_house.__str__() + "'s " + self.rulebook_name + " Rules"
@@ -95,10 +119,19 @@ class Rulebook(models.Model):
 class Rule(models.Model):
 	rule_name = models.CharField(max_length=50)
 	rule_text = models.CharField(max_length=500)
-	parent_rulebook = models.ForeignKey(Rulebook, default = "0000000", on_delete=models.CASCADE)
-	icon_link = models.CharField(max_length=25)
+	parent_rulebook = models.ForeignKey(Rulebook, related_name = "rules", default = "0000000", on_delete=models.CASCADE)
+	icon_link = models.CharField(max_length=25, blank = True, null = True)
 
 	creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+	def copy(self, rb, user):
+		new_rule = Rule.objects.create()
+		new_rule.rule_name = self.rule_name
+		new_rule.rule_text = self.rule_text
+		new_rule.parent_rulebook = rb
+		new_rule.creator = user
+
+		rule.save()
 
 	def __str__(self):
 		return self.rule_name + " for " + self.parent_rulebook.__str__()

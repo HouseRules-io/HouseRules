@@ -22,9 +22,9 @@ class HouseForm(ModelForm):
 class RulebookForm(ModelForm):
     class Meta:
         model = Rulebook
-        fields = ['rulebook_name', 'parent_house']#, 'icon_link']
+        fields = ['rulebook_name']
 
 class RuleForm(ModelForm):
     class Meta:
         model = Rule
-        fields = ['rule_name', 'rule_text', 'parent_rulebook', 'icon_link']
+        fields = ['rule_name', 'rule_text']
