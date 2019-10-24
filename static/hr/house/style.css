@@ -190,6 +190,7 @@ h1 {
 
 .user-email {
     font-size: 1.4rem;
+    color: #f1c1c0;
 }
 
 .user-type {
@@ -275,7 +276,7 @@ h1 {
     position: sticky;
     top: 6rem;
     padding: 1.8rem 3rem 1rem 3rem;
-    background-color: #fafafa;
+    background-color: var--(light-grey);
     height: 4rem;
 }
 
@@ -547,7 +548,7 @@ h1 {
     height: 100vh;
     font-size: 20px;
     background-color: #3c4a54;
-    color: #88959e;
+    color: #808080;
 }
 
 .rules-controls-menu {
