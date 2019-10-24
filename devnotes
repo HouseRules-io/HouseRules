@@ -1,4 +1,3 @@
 postgres: xAxiOlnjOewNbPAb
 
 cloud_sql_proxy.exe -instances "house-rules-249409:us-east4:house-rules-db=tcp:5432"
-
