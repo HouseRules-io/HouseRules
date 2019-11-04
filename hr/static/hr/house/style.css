@@ -40,7 +40,7 @@ body form {
     width: 100%;
     height: 16%;
     text-align: center;
-    background: #808080;
+    background: var(--dark-grey);
     padding-top: 20px;
     padding-bottom: 20px;
 
@@ -199,6 +199,8 @@ h1 {
 
 .user-email {
     font-size: 1.4rem;
+    color: #f1c1c0;
+
 }
 
 .user-type {
@@ -209,8 +211,6 @@ h1 {
 .user-arrow-btn {
     font-size: 1.5rem;
 }
-
-
 
 
 
@@ -268,7 +268,7 @@ h1 {
     position: sticky;
     top: 6rem;
     padding: 1.8rem 3rem 1rem 3rem;
-    background-color: #fafafa;
+    background-color: var(--white);
     height: 4rem;
 }
 
@@ -497,7 +497,7 @@ h1 {
     top: 0;
     height: 100vh;
     font-size: 20px;
-    background-color: #3c4a54;
+    background-color: var(--dark-grey);
     color: #88959e;
 }
 
@@ -580,10 +580,13 @@ h1 {
 }
 
 .about-item-box {
+    /*
     border-style: dotted;
     border-width: .2rem;
     border-color: green;
+    */
     padding-bottom: 2rem;
+
 }
 
 .about-item-box h2 {
