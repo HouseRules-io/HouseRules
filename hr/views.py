@@ -38,7 +38,7 @@ def about(request):
 # 		'House' : house,
 # 		'rulebook_list' : rulebook_list
 # 	}
-# 	return HttpResponse(template.render(context, request))
+# 	return HttpResponse(template.render(context, request)),
 
 def house(request, House_hex):
 	house_id = int(House_hex, 16)
