@@ -33,7 +33,7 @@ urlpatterns = [
 
     path('my_houses/', views.my_houses, name = 'my_houses'),
     path('house/<str:House_hex>/', views.house, name = 'house'),
-    path('house/new/', views.newHouse, name = 'new_house'),
+    # path('house/new/', views.newHouse, name = 'new_house'),
     path('rulebook/<int:Rulebook_id>/', views.rulebook, name = 'rulebook'),
     path('rulebook/new/<str:house_id>/', views.newRulebook, name = 'new_rulebook'),
     path('rule/<int:Rule_id>/', views.rule, name = 'rule'),
@@ -51,7 +51,7 @@ urlpatterns = [
 
     path('refresh_qr', views.refresh_qr, name = 'refresh_qr'),
 
-    path('test_url', views.newHouse, name = 'test_url')
+    path('create_house', views.newHouse, name = 'create_house')
 
 
 

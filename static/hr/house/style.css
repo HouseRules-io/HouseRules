@@ -567,9 +567,11 @@ h1 {
 /* About Begin */
 .about-item-container {
     /*height: 70rem;*/
-    border-style: solid;
+    /*border-style: solid;
     border-width: .2rem;
+    */
     font-size: 1rem;
+    padding: 1rem 0 0 2rem;
 }
 
 .about-item-header {
@@ -597,6 +599,7 @@ h1 {
 
 .about-item-box h3 {
     font-size: 2rem;
+    padding-left: 3rem;
 }
 
 
