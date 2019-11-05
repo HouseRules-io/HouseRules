@@ -49,6 +49,10 @@ urlpatterns = [
 
     # path('rb_copy')
 
-    path('refresh_qr', views.refresh_qr, name = 'refresh_qr')
+    path('refresh_qr', views.refresh_qr, name = 'refresh_qr'),
+
+    path('test_url', views.newHouse, name = 'test_url')
+
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

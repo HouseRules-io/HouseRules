@@ -95,17 +95,23 @@
 
 <nav class="sidebar">
 
-	<button type = "button" onclick = "location.href='/'" class="collapse-btn menu-btn btn" aria-label="Expand Menu" title="Expand Menu">
+    <button type = "button" onclick="goBack()" class="collapse-btn menu-btn btn" aria-label="Go Back" title="Go Back">
             <i class="fas fa-arrow-left" aria-hidden="true"></i>
     </button>
 
+	<script>
+		function goBack() {
+		  window.history.back();
+		}
+	</script>
 
-    <button type = "button" onclick = "location.href='/my_houses'" class="collapse-btn menu-btn btn" aria-label="Home Page" title="Expand Menu">
+
+    <button type = "button" onclick = "location.href='/my_houses'" class="collapse-btn menu-btn btn" aria-label="Home Page" title="Home Page">
             <i class="fas fa-home" aria-hidden="true"></i>
     </button>
 
 
-    <button type = "button" onclick = "location.href='/about'" class="collapse-btn menu-btn btn" aria-label="About HouseRules" title="Expand Menu">
+    <button type = "button" onclick = "location.href='/about'" class="collapse-btn menu-btn btn" aria-label="About HouseRules" title="About">
             <i class="fas fa-info-circle" aria-hidden="true"></i>
     </button>
 
