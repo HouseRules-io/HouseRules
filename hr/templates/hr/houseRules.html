@@ -1,6 +1,19 @@
 {% extends 'hr/base.html' %}
+{% load define_action %}
 
 {%block title%}{{House.house_name}}{%endblock%}
+
+{%css_js%} 
+<script>
+
+function housePopup() {
+	var popup = document.getElementById("houseSelPopup");
+	popup.classList.toggle('show');
+	popup.
+}
+
+</script>
+{%css_js%} HEY!: MIGHT NEED TO CHANGE THIS SO YOU DON'T OVERWRITE
 
 {%block content%}
 
@@ -52,7 +65,7 @@
 						<a class = "rules-item-menu-option" href = "/del_rulebook/{{ rulebook.id }}" style = "color: #880000">
 							Delete
 						</a>
-						<a class = "rules-item-menu-option" href = "#" style = "color: #000088">
+						<a class = "rules-item-menu-option" onclick = "housePopup({{ rulebook.id }})" style = "color: #000088">
 							Copy
 						</a>
 					</div>
@@ -86,6 +99,21 @@
 			<h2>Return to the homepage.</h2>
 		</a>
 	</div>
+
+	<span class = "popup" id = "houseSelPopup"> 
+		<div class = "popup-frame">
+			<div class = "popup-frame-title">
+
+			</div>
+			<div class = "popup-frame-house-list">
+				{% for house in user.owned_houses %}
+				<a href = "to replace" class = "popup-copy-link"> HEY! NEED TO REPLACE THIS IN THE POPUP FUNCTION
+					Copy to {{house.house_name}}
+				</a>
+				{% endfor %}
+			</div>
+		</div>
+	</span>
 
 <!-- </body> -->
 
