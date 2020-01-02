@@ -87,8 +87,8 @@ class House(models.Model):
 		new_house.creator = user
 		new_house.house_name = self.house_name + '-copy'
 
-		for rb in new_house.rulebooks.all():
-			new_rb = rb.copy(self, user)
+		for rb in self.rulebooks.all():
+			rb.copy(new_house, user)
 
 		new_house.init_qr()
 
@@ -102,13 +102,13 @@ class Rulebook(models.Model):
 	creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
 	def copy(self, house, user):
-		new_rb = Rulebook.objects.create()
-		new_rb.rulebook_name = self.rulebook_name
-		new_rb.parent_house = house
-		new_rb.creator = user
+		rulebook_name = self.rulebook_name + "-copy"
+		parent_house = house
+		creator = user
+		new_rb = Rulebook.objects.create(rulebook_name = rulebook_name, parent_house = parent_house, creator = creator)
 
 		for rule in self.rules.all():
-			new_rule = rule.copy(self, user)
+			rule.copy(new_rb, user)
 
 		new_rb.save()
 
@@ -125,13 +125,13 @@ class Rule(models.Model):
 	creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
 	def copy(self, rb, user):
-		new_rule = Rule.objects.create()
-		new_rule.rule_name = self.rule_name
-		new_rule.rule_text = self.rule_text
-		new_rule.parent_rulebook = rb
-		new_rule.creator = user
+		rule_name = self.rule_name
+		rule_text = self.rule_text
+		parent_rulebook = rb
+		creator = user
+		new_rule = Rule.objects.create(rule_name = rule_name, rule_text = rule_text, parent_rulebook = parent_rulebook, creator = creator)
 
-		rule.save()
+		new_rule.save()
 
 	def __str__(self):
 		return self.rule_name + " for " + self.parent_rulebook.__str__()

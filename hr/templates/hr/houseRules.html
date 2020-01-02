@@ -3,17 +3,25 @@
 
 {%block title%}{{House.house_name}}{%endblock%}
 
-{%css_js%} 
+{%block css_js%} 
 <script>
 
-function housePopup() {
+function housePopup(rb_id) {
 	var popup = document.getElementById("houseSelPopup");
 	popup.classList.toggle('show');
-	popup.
+	
+	var links = document.getElementsByClassName("popup-copy-link");
+	var i;
+	for(i = 0; i < links.length; i++) {
+		link = links[i]
+		link.href += rb_id + "/"
+	}
+
+	console.log("Popup requested to show")
 }
 
 </script>
-{%css_js%} HEY!: MIGHT NEED TO CHANGE THIS SO YOU DON'T OVERWRITE
+{% endblock %} HEY!: MIGHT NEED TO CHANGE THIS SO YOU DON'T OVERWRITE
 
 {%block content%}
 
@@ -100,16 +108,18 @@ function housePopup() {
 		</a>
 	</div>
 
+	<span class = "popup-backdrop" id = "houseSelPopupBack">         </span>
+
 	<span class = "popup" id = "houseSelPopup"> 
 		<div class = "popup-frame">
 			<div class = "popup-frame-title">
-
+				Choose a house to copy this rulebook to!
 			</div>
 			<div class = "popup-frame-house-list">
-				{% for house in user.owned_houses %}
-				<a href = "to replace" class = "popup-copy-link"> HEY! NEED TO REPLACE THIS IN THE POPUP FUNCTION
-					Copy to {{house.house_name}}
-				</a>
+				{% for house in user.owned_houses.all %}
+					<a href = "/copy_rulebook/{{ house.id }}/" class = "popup-copy-link">
+						<p> Copy to {{house.house_name}} </p>
+					</a>
 				{% endfor %}
 			</div>
 		</div>

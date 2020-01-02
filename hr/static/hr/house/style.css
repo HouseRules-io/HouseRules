@@ -536,8 +536,82 @@ h1 {
 }
 
 
+.popup {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    height: 40%;
+    width: 40%;
+    border: 2px solid var(--dark-grey);
+    border-radius: 1rem;
+    /*border: 5px solid blue;*/
+    background: white;
+    visibility: hidden;
+    padding: 1rem;
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
+}
 
+.show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
 
+.popup-frame {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-frame-title {
+    flex: 1;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    color: var(--dark-blue);
+    font-size: 20px;
+    border-bottom: 2px solid var(--dark-blue);
+    padding: 2px;
+}
+
+.popup-frame-house-list {
+    flex: 8;
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    overflow: scroll;
+}
+
+.popup-copy-link {
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    padding: 0px;
+    margin: 0px;
+    vertical-align: middle;
+}
+
+.popup-copy-link p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    transition: 0.7s;
+}
+
+.popup-copy-link p:hover {
+    background: var(--light-grey);
+    color: white;
+}
+
+.popup-backdrop {
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+    background: rgba(100, 100, 100, 100);
+}
 /*
 
 The following code will only run if your browser supports CSS grid.
@@ -545,6 +619,16 @@ The following code will only run if your browser supports CSS grid.
 Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling. 
 
 */
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
 
 @supports (display: grid) {
     body {

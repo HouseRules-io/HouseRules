@@ -192,13 +192,13 @@ def del_rulebook(request, rulebook_id):
 def del_rule(request, rule_id):
 	to_del_rule = Rule.objects.get(id = rule_id)
 	to_del_rule.delete()
-	return redirect('/my-houses/')
+	return redirect('/my_houses/')
 
-def copy_rulebook(request, rulebook_id, house_id):
+def copy_rulebook(request, house_id, rulebook_id):
 	house = House.objects.get(id = house_id)
 	rb = Rulebook.objects.get(id = rulebook_id)
-	rb.copy(house)
-	return redirect('/my-houses/')
+	rb.copy(house, request.user)
+	return redirect('/my_houses/')
 
 def copy_rule(request, rulebook_id):
-	return redirect('/my-houses/')
+	return redirect('/my_houses/')
