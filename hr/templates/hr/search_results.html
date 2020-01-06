@@ -8,17 +8,14 @@
 	<!-- Rules Header -->
 	<div class="rules-items-controls">
 
-		<h2>Welcome to HouseRules!</h2>
+		<h2>House Search Results for {{query}} </h2>
 
 	</div>
 
-
 	<!-- Actual Rules -->
 	<div class="rules-items-container">
-		<a href="/house/new"> 
-			<h2>Create House</h2>
-		</a>
-		{% for house in house_list %}
+
+		{% for house in houses %}
 		<a class="house-link" href = "/house/{{ house.hex_id }}/" style="text-decoration:none">
 			<div class="rules-item password-item" tabindex="0">
 				<div class="rules-item-thumbnail">
@@ -32,14 +29,7 @@
 		</a>
 		{% endfor %}
 
-		<a href="/house/new"> 
-			<h2>Create House</h2>
-		</a>
-
 	</div>
-
-
-<!-- </body> -->
-
+	
 {%endblock%}
 

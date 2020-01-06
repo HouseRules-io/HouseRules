@@ -74,8 +74,49 @@ body {
     background-color: #4e8ff1;
     color: #fff;
     padding: 0 0rem 0 3rem;
-
     /*border : 2px dashed blue;*/
+}
+
+.search-bar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 6rem;
+    height: 2rem;
+    padding: 0.3rem;
+    background: var(--dark-blue);
+    text-align: center;
+}
+
+.search-field {
+    border: 2px solid var(--dark-blue);
+    border-bottom: 2px solid white;
+    background: none;
+    margin-right: 2rem;
+    width: 40rem;
+    color: white;
+    transition: 0.3s;
+}
+
+.search-field:focus {
+    border: 2px solid white;
+}
+
+::placeholder {
+    color: var(--light-grey);
+}
+
+.search-button {
+    border-radius: 0.4rem;
+    border: 2px solid white;
+    background: none;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    color: var(--dark-blue);
+    background: white;
 }
 
 .logo a, h1 {
@@ -147,14 +188,21 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
+
+.logo-wrapper {
+    flex: 1;
+}
+
 .user-settings {
     display: flex;
     align-items: center;
     font-weight: 400;
     line-height: 1.2;
     height: 100%;
+    width: 24%;
     padding: 0 0rem;
     cursor: pointer;
+    flex: 2;
 }
 
 .user-settings:hover {
@@ -251,7 +299,7 @@ h1 {
     align-items: center;
     position: -webkit-sticky;
     position: sticky;
-    top: 6rem;
+    top: 8rem;
     padding: 1.8rem 3rem 1rem 3rem;
     background-color: #fafafa;
     height: 4rem;

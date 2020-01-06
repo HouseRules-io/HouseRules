@@ -37,6 +37,8 @@ urlpatterns = [
     path('rule/<int:Rule_id>/', views.rule, name = 'rule'),
     path('rule/new/<str:rb_id>/', views.newRule, name = 'new_rule'),
 
+    path('search/', views.search, name = 'search'),
+
     path('add_house/<int:house_id>/', views.add_house, name = 'add-house'),
     path('copy_house/<int:house_id>/', views.copy_house, name = 'copy-house'),
     path('del_house/<int:house_id>/', views.del_house, name = 'del-house'),
