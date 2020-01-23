@@ -83,8 +83,49 @@ body form {
     background-color: #4e8ff1;
     color: #fff;
     padding: 0 0rem 0 3rem;
-
     /*border : 2px dashed blue;*/
+}
+
+.search-bar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 6rem;
+    height: 2rem;
+    padding: 0.3rem;
+    background: var(--dark-blue);
+    text-align: center;
+}
+
+.search-field {
+    border: 2px solid var(--dark-blue);
+    border-bottom: 2px solid white;
+    background: none;
+    margin-right: 2rem;
+    width: 40rem;
+    color: white;
+    transition: 0.3s;
+}
+
+.search-field:focus {
+    border: 2px solid white;
+}
+
+::placeholder {
+    color: var(--light-grey);
+}
+
+.search-button {
+    border-radius: 0.4rem;
+    border: 2px solid white;
+    background: none;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    color: var(--dark-blue);
+    background: white;
 }
 
 .logo a, h1 {
@@ -156,15 +197,21 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
+
+.logo-wrapper {
+    flex: 1;
+}
+
 .user-settings {
     display: flex;
     align-items: center;
     font-weight: 400;
     line-height: 1.2;
     height: 100%;
+    width: 24%;
     padding: 0 0rem;
     cursor: pointer;
-    width: 20%;
+    flex: 2;
 }
 
 .user-settings:hover {
@@ -266,7 +313,7 @@ h1 {
     align-items: center;
     position: -webkit-sticky;
     position: sticky;
-    top: 6rem;
+    top: 8rem;
     padding: 1.8rem 3rem 1rem 3rem;
     background-color: var(--white);
     height: 4rem;
@@ -560,6 +607,82 @@ h1 {
 }
 
 
+.popup {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    height: 40%;
+    width: 40%;
+    border: 2px solid var(--dark-grey);
+    border-radius: 1rem;
+    /*border: 5px solid blue;*/
+    background: white;
+    visibility: hidden;
+    padding: 1rem;
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+.show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.popup-frame {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-frame-title {
+    flex: 1;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    color: var(--dark-blue);
+    font-size: 20px;
+    border-bottom: 2px solid var(--dark-blue);
+    padding: 2px;
+}
+
+.popup-frame-house-list {
+    flex: 8;
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    overflow: scroll;
+}
+
+.popup-copy-link {
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    padding: 0px;
+    margin: 0px;
+    vertical-align: middle;
+}
+
+.popup-copy-link p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    transition: 0.7s;
+}
+
+.popup-copy-link p:hover {
+    background: var(--light-grey);
+    color: white;
+}
+
+.popup-backdrop {
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+    background: rgba(100, 100, 100, 100);
+}
 
 
 
@@ -616,6 +739,16 @@ h1 {
 The following code will only run if browser supports CSS grid.
 
 */
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
 
 @supports (display: grid) {
     body {

@@ -2,6 +2,25 @@
 
 {%block title%}{{House.house_name}}{%endblock%}
 
+{%block css_js%} 
+<script>
+
+function housePopup(rb_id) {
+	var popup = document.getElementById("houseSelPopup");
+	popup.classList.toggle('show');
+	
+	var links = document.getElementsByClassName("popup-copy-link");
+	var i;
+	for(i = 0; i < links.length; i++) {
+		link = links[i]
+		link.href += rb_id + "/"
+	}
+
+}
+
+</script>
+{% endblock %} HEY!: MIGHT NEED TO CHANGE THIS SO YOU DON'T OVERWRITE
+
 {%block content%}
 
 <!-- <body> -->
@@ -52,14 +71,16 @@
 						<a class = "rules-item-menu-option" href = "/del_rulebook/{{ rulebook.id }}" style = "color: #880000">
 							Delete
 						</a>
-						<a class = "rules-item-menu-option" href = "#" style = "color: #000088">
+						<a class = "rules-item-menu-option" onclick = "housePopup({{ rulebook.id }})" style = "color: #000088">
 							Copy
 						</a>
 					</div>
 				{% else %}
-					<div class = "rules-item-menu">
+					<a class = "rules-item-menu" href = "/rulebook/{{ rulebook.id }}/">
+						<div>
 
-					</div>
+						</div>
+					</a>
 				{% endif %}
 
 				<a class = "rules-item-content" href = "/rulebook/{{ rulebook.id }}/" style="text-decoration:none">
@@ -84,6 +105,23 @@
 			<h2>Return to the homepage.</h2>
 		</a>
 	</div>
+
+	<span class = "popup-backdrop" id = "houseSelPopupBack">         </span>
+
+	<span class = "popup" id = "houseSelPopup"> 
+		<div class = "popup-frame">
+			<div class = "popup-frame-title">
+				Choose a house to copy this rulebook to!
+			</div>
+			<div class = "popup-frame-house-list">
+				{% for house in user.owned_houses.all %}
+					<a href = "/copy_rulebook/{{ house.id }}/" class = "popup-copy-link">
+						<p> Copy to {{house.house_name}} </p>
+					</a>
+				{% endfor %}
+			</div>
+		</div>
+	</span>
 
 <!-- </body> -->
 
