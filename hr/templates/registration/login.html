@@ -1,3 +1,7 @@
+{% extends 'hr/base.html' %}
+
+{%block title%}{{"Login to HouseRules"}}{%endblock%}
+
 {% block content %}
 
 {% if form.errors %}
@@ -33,7 +37,7 @@
 </form>
 
 {# Assumes you setup the password_reset view in your URLconf #}
+<h1><a href="{% url 'signup' %}">Sign up!</a></h1>
 <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-<p><a href="{% url 'signup' %}">Sign up!</a></p>
 
 {% endblock %}

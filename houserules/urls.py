@@ -25,13 +25,15 @@ urlpatterns = [
     path('', views.index, name = 'index'),
     path('accounts/', include('django.contrib.auth.urls'), name = 'accounts'),
     path('hw/', views.HelloWorld),
+    path('about/', views.about),
+
 
     path('signup', views.signup, name = 'signup'),
     path('dev', views.dev, name = 'dev'),
 
     path('my_houses/', views.my_houses, name = 'my_houses'),
     path('house/<str:House_hex>/', views.house, name = 'house'),
-    path('house/new/', views.newHouse, name = 'new_house'),
+    # path('house/new/', views.newHouse, name = 'new_house'),
     path('rulebook/<int:Rulebook_id>/', views.rulebook, name = 'rulebook'),
     path('rulebook/new/<str:house_id>/', views.newRulebook, name = 'new_rulebook'),
     path('rule/<int:Rule_id>/', views.rule, name = 'rule'),
@@ -49,6 +51,10 @@ urlpatterns = [
 
     # path('rb_copy')
 
-    path('refresh_qr', views.refresh_qr, name = 'refresh_qr')
+    path('refresh_qr', views.refresh_qr, name = 'refresh_qr'),
+
+    path('create_house', views.newHouse, name = 'create_house')
+
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

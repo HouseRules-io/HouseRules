@@ -1,38 +1,3 @@
-code: 
-1) add more to ur house
-
-2) custom urls for houses that redirect to house pages
-
-
-Non-pressing problems to fix later:
-
-x) make css prettier
-
-x) fix zoom-out issue / try to narrow the page
-
-x) better favicon
-
-
-
-
-biz:
-
-1) figure out a way to get posters to clemson (check)
-
-2) devise long-term pricing strat
-
-
-
-
-
-
-
-
-
-may need later:
 postgres: xAxiOlnjOewNbPAb
 
-cloud_sql_proxy.exe -instances "house-rules-249409:us-east4:house-rules-db=tcp:3306"
-
-
-
+cloud_sql_proxy.exe -instances "house-rules-249409:us-east4:house-rules-db=tcp:5432"

@@ -22,6 +22,13 @@ def HelloWorld(request):
     context = {}
     return HttpResponse(template.render(context, request))
 
+def about(request):
+	template = loader.get_template('hr/about.html')
+	context = {}
+	return HttpResponse(template.render(context, request))
+
+
+
 # def house(request, House_id):
 # 	template = loader.get_template('hr/houseRules.html')
 # 	house = get_object_or_404(House, pk=House_id)
@@ -31,7 +38,7 @@ def HelloWorld(request):
 # 		'House' : house,
 # 		'rulebook_list' : rulebook_list
 # 	}
-# 	return HttpResponse(template.render(context, request))
+# 	return HttpResponse(template.render(context, request)),
 
 def house(request, House_hex):
 	house_id = int(House_hex, 16)
