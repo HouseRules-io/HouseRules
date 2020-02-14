@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.forms import model_to_dict
 
-
+from simple_search import search_filter
 
 from .models import House
 from .models import Rulebook
@@ -199,10 +199,23 @@ def del_rulebook(request, rulebook_id):
 def del_rule(request, rule_id):
 	to_del_rule = Rule.objects.get(id = rule_id)
 	to_del_rule.delete()
-	return redirect('/my-houses/')
+	return redirect('/my_houses/')
 
-def copy_rulebook(request, rulebook_id):
-	return redirect('/my-houses/')
+def copy_rulebook(request, house_id, rulebook_id):
+	house = House.objects.get(id = house_id)
+	rb = Rulebook.objects.get(id = rulebook_id)
+	rb.copy(house, request.user)
+	return redirect('/my_houses/')
 
 def copy_rule(request, rulebook_id):
-	return redirect('/my-houses/')
+	return redirect('/my_houses/')
+
+def search(request):
+	query = request.GET.get('query', '')
+	if(query == ''):
+		return redirect('my_houses')
+
+	search_fields = ['house_name']
+	houses = House.objects.filter(search_filter(search_fields, query))
+
+	return render(request, 'hr/search_results.html', {"houses":houses, "query":query})

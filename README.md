@@ -1,16 +1,16 @@
 # HouseRules
-[Visit the site](houserulez.net)
+[Visit the site](houserules.io)
 
 ## Overview
-House Rules is a webapp that allows users to share the rules of their house with their friends.
+House Rules is a webapp that allows users to share the rules of their house with their friends!  With a HouseRules poster or just an account on the site, your friends can scan your house's QR code to see all the rules you've made.
 
-## Local Hosting/Running Instructions
+## Local Hosting/Running Instructions 9
 1) Clone the main branch repository to your computer
-```git clone https://github.com/jacobvsargent/HouseRules.git```
+```git clone https://github.com/HouseRules-io/HouseRules.git```
 
 2) Download the Google Cloud SQL Proxy [here](https://cloud.google.com/sql/docs/mysql/connect-admin-proxy#install) (Step 2 shows how)
 
-3) Open a terminal window and navigate to the location fo the proxy exe file
+3) Open a terminal window and navigate to the location of the cloud proxy .exe file
 	
 4) Go to the settings.py file in the project, down to the database settings and change the port number there to the number of the open tcp port you would like to connect to the cloud sql service with
 	
@@ -28,7 +28,7 @@ House Rules is a webapp that allows users to share the rules of their house with
 9) Open localhost:8000 to see the site's homepage
 
 ## Authors
-Jacob Sargent, Charlie Gallentine, Nicholas Deas
+Jacob Sargent and Nicholas Deas
 
 ## Copyright
-Copyright 2019 by Bet On It, LLC. All Rights Reserved
+Copyright 2020 by Bet On It, LLC. All Rights Reserved

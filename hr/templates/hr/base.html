@@ -6,10 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="{% static 'hr/house/ico.ico' %}"/>
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel = "stylesheet" type = "text/css" href = "{% static 'hr/house/style.css' %}"/>
+	<script src="https://kit.fontawesome.com/74514636f8.js"></script>
+	
 	{% block css_js %}
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-		<link rel = "stylesheet" type = "text/css" href = "{% static 'hr/house/style.css' %}"/>
-		<script src="https://kit.fontawesome.com/74514636f8.js"></script>
 	{% endblock %}
 
 	<title> {% block title %} {% endblock %} </title>
@@ -24,63 +25,53 @@
 
 	<div class="masthead">
 
-		<a href='/'>
-			<div class="logo">
-					<h1>HouseRules<i class="fas fa-home logo-icon" aria-hidden="true"></i></h1>
-			</div>
-		</a>
-
-		<!--
-		<div class="rules-search">
-			<form>
-				<input type="search" class="search-input" placeholder="search" aria-label="search rules">
-				<i class="fas fa-search search-icon" aria-hidden="true"></i>
-			</form>
-		</div>
-		-->
-
-
-
-		<!-- ABOUT PAGE IN MASTHEAD 
-		<div class='mastabout'>
-			<a href='/about/'>
-				<h1>About</h1>
+		<div class = 'logo-wrapper'>
+			<a href='/' class="logo">
+					<h1>HouseRules<!-- <i class="fas fa-home logo-icon" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;| -->    </h1>
 			</a>
-		</div> -->
-		
+		</div>
 
-		{% if user.is_authenticated %}
-		<div class = "user-settings" tabindex = "0" aria-label = "User Settings">
-			<a href = "{% url 'index' %}">
+		<!--<div class = 'rules-search'>
+			<div class = "search-bar">
+				<form method = "GET" action = "{% url 'search' %}">
+					<input type = "search" name = "query" value = "{{ query }}" placeholder = "Search houses...">
+					<input type = "submit" tabindex = "-1" id = "submit-button">
+				</form>
+			</div>
+		</div>-->
+
+ 		{% if user.is_authenticated %}
+		<div class = "user-settings" aria-label = "User Settings">
+			<a href = "{% url 'my_houses' %}">
 				<ul href="user-info">
 					<li class="user-email">{{user.get_username}}</li>
 					<li class="user-type">Proud Homeowner</li>
 				</ul>
 			</a>
 		</div>
-		{% endif %}
+		{% endif %} 
 
-		<div class="user-settings" tabindex="0" aria-label="User Settings">
-			<!--
-			<div class="user-image">
-				<i class="fas fa-user-circle" aria-hidden="true"></i>
-			</div>
-			-->
+		<div class="user-settings" aria-label="User Settings">
+
 			{% if user.is_authenticated %}
-			<a class = 'logmein' href = '/accounts/logout'>
-				<h1> &nbsp;&nbsp;&nbsp;Logout </h1>
-			</a>
-			{% endif %}
-			{% if not user.is_authenticated %}
+				<a class = 'logmein' href = '/accounts/logout'>
+					<h1> Logout </h1>
+				</a>
+			{% else %}
 				<a class='logmein' href='/accounts/login'>
-					<h1> &nbsp;&nbsp;&nbsp;Login!</h1>
+					<h1> Login!</h1>
 				</a>
 			{% endif %}
-			</ul>
 		</div>
 
 	</div>
 	<!-- End of masthead -->
+	<div class = "search-bar">
+		<form method = "GET" action = "{% url 'search' %}">
+			<input type = "search" name = "query" value = "{{ query }}" placeholder = "Search Houses..." class = "search-field">
+			<input type = "submit" tabindex = "-1" id = "submit-button" value = "Search" class = "search-button">
+		</form>
+	</div>
 
 
 	{%block content%}

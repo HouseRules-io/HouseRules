@@ -559,7 +559,40 @@ h1 {
     height: 6rem;
 }
 
+.popup {
+    position: absolute;
+    height: 8rem;
+    width: 5rem;
+    border: 5px solid blue;
+}
 
+.popup-frame {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-frame-title {
+    flex: 2;
+    width: 100%;
+}
+
+.popup-frame-house-list {
+    flex: 8;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+}
+
+.popup-copy-link {
+    flex: 1;
+    width: 100%;
+}
 
 
 

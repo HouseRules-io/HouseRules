@@ -123,3 +123,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+houserules/settings.py
+*.pyc
