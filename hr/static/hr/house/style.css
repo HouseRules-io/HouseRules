@@ -545,7 +545,7 @@ h1 {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    height: 110vh;
+    height: 120vh;
     font-size: 20px;
     background-color: var(--dark-grey);
     color: #88959e;
