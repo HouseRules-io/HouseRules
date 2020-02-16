@@ -537,6 +537,7 @@ h1 {
 
 /* Sidebar */
 
+
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -544,7 +545,7 @@ h1 {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    height: 100vh;
+    height: 110vh;
     font-size: 20px;
     background-color: var(--dark-grey);
     color: #88959e;

@@ -36,27 +36,30 @@ function housePopup(rb_id) {
 
 	</div>
 
+
 	<div class = 'house-menu-container'>
 
-		{% if not House.creator.username == request.user.username %}
-			{% if House in request.user.profile.my_houses %}
-				<a class = 'remove-house' href = '/add_house/{{ House.id }}/' style = "text-decoration:none">
-					Unfollow House
-				</a>
-			{% else %}
-				<a class = 'add-house' href = '/add_house/{{ House.id }}/' style = "text-decoration:none">
-					Follow House
+		{% if request.user.is_authenticated %}
+			{% if not House.creator.username == request.user.username %}
+				{% if House in request.user.profile.my_houses %}
+					<a class = 'remove-house' href = '/add_house/{{ House.id }}/' style = "text-decoration:none">
+						Unfollow House
+					</a>
+				{% else %}
+					<a class = 'add-house' href = '/add_house/{{ House.id }}/' style = "text-decoration:none">
+						Follow House
+					</a>
+				{% endif %}
+			{% else %}	
+				<a href = '/del_house/{{ House.id }}/' style = "text-decoration:none">
+					Delete House
 				</a>
 			{% endif %}
-		{% else %}	
-			<a href = '/del_house/{{ House.id }}/' style = "text-decoration:none">
-				Delete House
+
+			<a href = '/copy_house/{{ House.id }}/' style = "text-decoration:none">
+				Copy House
 			</a>
 		{% endif %}
-
-		<a href = '/copy_house/{{ House.id }}/' style = "text-decoration:none">
-			Copy House
-		</a>
 
 	</div>
 
