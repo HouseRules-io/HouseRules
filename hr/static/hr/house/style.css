@@ -214,9 +214,9 @@ h1 {
     flex: 2;
 }
 
-.user-settings:hover {
+/*.user-settings:hover {
     background-color: #53b3d2;
-}
+}*/
 
 .mastabout {
     width: 20%;
@@ -652,9 +652,10 @@ h1 {
 
 .popup-edit {
     flex: 8;
-    width: 100%;
+    width: 96%;
     align-content: center;
     text-align: center;
+    padding: 2%;
 }
 
 .popup-frame-house-list {

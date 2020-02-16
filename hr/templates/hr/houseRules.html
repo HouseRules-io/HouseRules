@@ -1,6 +1,6 @@
 {% extends 'hr/base.html' %}
 
-{%block title%}{{House.house_name}}{%endblock%}
+{%block title%} {{ House.house_name }} {%endblock%}
 
 {%block css_js%} 
 <script>
@@ -16,6 +16,11 @@ function housePopup(rb_id) {
 		link.href += rb_id + "/"
 	}
 
+}
+
+function closeHousePopup() {
+	var popup = document.getElementById("houseSelPopup");
+	popup.classList.toggle('show');
 }
 
 function editName() {
@@ -125,6 +130,9 @@ function editName() {
 				Choose a house to copy this rulebook to!
 			</div>
 			<div class = "popup-frame-house-list">
+				<a onClick = "closeHousePopup()" style = "color:red; cursor: pointer">
+					Cancel
+				</a>
 				{% for house in user.owned_houses.all %}
 					<a href = "/copy_rulebook/{{ house.id }}/" class = "popup-copy-link">
 						<p> Copy to {{house.house_name}} </p>
@@ -146,6 +154,11 @@ function editName() {
 					<input name = "new_name" placeholder= "{{ House.house_name }}">
 					<button type = "submit"> Submit Changes </button>
 				</form>
+			</div>
+			<div class = "popup-edit">
+				<a onClick = "editName()" style = "color:red;cursor:pointer">
+					Cancel
+				</a>
 			</div>
 		</div>
 	</span>
