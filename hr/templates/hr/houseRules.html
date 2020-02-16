@@ -18,6 +18,11 @@ function housePopup(rb_id) {
 
 }
 
+function editName() {
+	var popup = document.getElementById("nameEditPopup");
+	popup.classList.toggle('show');
+}
+
 </script>
 {% endblock %} HEY!: MIGHT NEED TO CHANGE THIS SO YOU DON'T OVERWRITE
 
@@ -53,6 +58,9 @@ function housePopup(rb_id) {
 			{% else %}	
 				<a href = '/del_house/{{ House.id }}/' style = "text-decoration:none">
 					Delete House
+				</a>
+				<a style = "text-decoration:none" onclick = "editName()">
+					Edit Name
 				</a>
 			{% endif %}
 
@@ -123,6 +131,21 @@ function housePopup(rb_id) {
 					</a>
 				{% endfor %}
 				
+			</div>
+		</div>
+	</span>
+
+	<span class = "popup" id = "nameEditPopup"> 
+		<div class = "popup-frame">
+			<div class = "popup-frame-title">
+				Enter a new name for the house.
+			</div>
+			<div class = "popup-edit">
+				<form method = "POST">
+					{% csrf_token %}
+					<input name = "new_name" placeholder= "{{ House.house_name }}">
+					<button type = "submit"> Submit Changes </button>
+				</form>
 			</div>
 		</div>
 	</span>
