@@ -44,6 +44,10 @@ def house(request, House_hex):
 	house_id = int(House_hex, 16)
 	template = loader.get_template('hr/houseRules.html')
 	house = get_object_or_404(House, pk=house_id)
+	if(request.method == "POST"):
+		new_name = request.POST['new_name']
+		house.house_name = new_name
+		house.save()
 	rulebook_list = Rulebook.objects.filter(parent_house = house_id)
 	#rulebook_list = Rulebook.objects.all()
 	context = {
