@@ -15,9 +15,7 @@
 
 	<!-- Actual Rules -->
 	<div class="rules-items-container">
-		<a href="/house/new"> 
-			<h2>Create House</h2>
-		</a>
+	
 		{% for house in house_list %}
 		<a class="house-link" href = "/house/{{ house.hex_id }}/" style="text-decoration:none">
 			<div class="rules-item password-item" tabindex="0">
@@ -32,6 +30,9 @@
 		</a>
 		{% endfor %}
 
+		<a href="/create_house"> 
+			<h2>Create House</h2>
+		</a>
 
 	</div>
 
