@@ -3,32 +3,32 @@
 {%block title%} {{ House.house_name }} {%endblock%}
 
 {%block css_js%} 
-<script>
+	<script>
 
-function housePopup(rb_id) {
-	var popup = document.getElementById("houseSelPopup");
-	popup.classList.toggle('show');
-	
-	var links = document.getElementsByClassName("popup-copy-link");
-	var i;
-	for(i = 0; i < links.length; i++) {
-		link = links[i]
-		link.href += rb_id + "/"
+	function housePopup(rb_id) {
+		var popup = document.getElementById("houseSelPopup");
+		popup.classList.toggle('show');
+		
+		var links = document.getElementsByClassName("popup-copy-link");
+		var i;
+		for(i = 0; i < links.length; i++) {
+			link = links[i]
+			link.href += rb_id + "/"
+		}
+
 	}
 
-}
+	function closeHousePopup() {
+		var popup = document.getElementById("houseSelPopup");
+		popup.classList.toggle('show');
+	}
 
-function closeHousePopup() {
-	var popup = document.getElementById("houseSelPopup");
-	popup.classList.toggle('show');
-}
+	function editName() {
+		var popup = document.getElementById("nameEditPopup");
+		popup.classList.toggle('show');
+	}
 
-function editName() {
-	var popup = document.getElementById("nameEditPopup");
-	popup.classList.toggle('show');
-}
-
-</script>
+	</script>
 {% endblock %} HEY!: MIGHT NEED TO CHANGE THIS SO YOU DON'T OVERWRITE
 
 {%block content%}

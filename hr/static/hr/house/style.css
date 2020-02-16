@@ -312,8 +312,8 @@ h1 {
 .rules-items-controls {
     display: flex;
     align-items: center;
-    position: -webkit-sticky;
-    position: sticky;
+    /*position: -webkit-sticky;*/
+    /*position: sticky;*/
     top: 8rem;
     padding: 1.8rem 3rem 1rem 3rem;
     background-color: var(--white);
