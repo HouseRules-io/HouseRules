@@ -41,10 +41,8 @@ function editName() {
 
 	</div>
 
-
+	{% if request.user.is_authenticated %}
 	<div class = 'house-menu-container'>
-
-		{% if request.user.is_authenticated %}
 			{% if not House.creator.username == request.user.username %}
 				{% if House in request.user.profile.my_houses %}
 					<a class = 'remove-house' href = '/add_house/{{ House.id }}/' style = "text-decoration:none">
@@ -67,9 +65,8 @@ function editName() {
 			<a href = '/copy_house/{{ House.id }}/' style = "text-decoration:none">
 				Copy House
 			</a>
-		{% endif %}
-
 	</div>
+	{% endif %}
 
 
 	<!-- Actual Rules -->

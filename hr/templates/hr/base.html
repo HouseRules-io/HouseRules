@@ -66,12 +66,17 @@
 
 	</div>
 	<!-- End of masthead -->
+
+
+	<!--Search bar-->
+	{% if user.is_authenticated %}
 	<div class = "search-bar">
 		<form method = "GET" action = "{% url 'search' %}">
 			<input type = "search" name = "query" value = "{{ query }}" placeholder = "Search Houses..." class = "search-field">
 			<input type = "submit" tabindex = "-1" id = "submit-button" value = "Search" class = "search-button">
 		</form>
 	</div>
+	{% endif %}
 
 
 	{%block content%}
