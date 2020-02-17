@@ -112,9 +112,12 @@ def newRule(request, rb_id):
 			if new_r.parent_rulebook.parent_house.creator == request.user:
 				new_r.creator = request.user
 				new_r.save()
+				print("Created successfully")
 				return redirect('/rulebook/' + rb_id + '/')
 			else:
 				return redirect('/rulebook/' + rb_id + '/')
+		else:
+			print("Form not valid")
 	else:
 		form = RuleForm()
 	return render(request, 'hr/newRule.html', {'form': form})
