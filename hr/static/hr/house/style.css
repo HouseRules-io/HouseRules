@@ -1,3 +1,4 @@
+
 :root {
     font-size: 10px;
 
@@ -372,7 +373,7 @@ h1 {
     justify-content: center;
     margin-top:30px;
     /*border: 2px solid orange;*/
-    min-height: 30rem;
+    min-height: 45rem;
 }
 
 .rules-items-container h2, a {
